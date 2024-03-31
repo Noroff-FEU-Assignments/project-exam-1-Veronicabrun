@@ -1,0 +1,540 @@
+html,
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+body {
+    font-family: "lato", "Playfair Display", Arial, Helvetica, sans-serif;
+    line-height: 1.5; 
+}
+/*Nav menu*/
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color:#F2EDE7;
+}
+
+.logo {
+   font-size: 1.5em;
+   text-decoration: none;
+   color: #2C2C2C;
+   font-family: "Playfair Display", serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+li {
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    color: #2C2C2C;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.search {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    color: #2C2C2C;
+}
+
+/*Banner-container*/
+.banner-img-container {
+    position: relative;
+    background-image: url(../images/home-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    min-height: 70vh;
+}
+
+.banner-container {
+    margin: 0 auto;
+    padding: 30px;
+    position: absolute;
+    top: 100px;  
+}
+
+.large-text {
+    display: flex;
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    line-height: 1,5rem;
+    margin-top: 5px;
+}
+
+.small-text {
+    font-size: 18px;
+    line-height: 1,5rem;
+    margin-bottom: 30px;
+}
+
+.cta-banner {
+    width: 100px; /* Angi ønsket bredde */
+    height: 40px; /* Angi ønsket høyde */
+    padding: 10px 25px 10px 25px;
+    background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
+    color: #2C2C2C; /* Legg til ønsket tekstfarge */
+    border: 1px solid #2C2C2C; /* Legg til en solid kantlinje */
+    border-radius: 0; /* Fjern avrundede hjørner */
+    font-size: 16px; /* Angi ønsket fontstørrelse */
+    cursor: pointer; /* Endre musepekeren til et håndikon */  
+    line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
+}
+
+.loading-indicator {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #BF8C60;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-left: 50%;
+    animation: spin 2s linear infinite;
+}
+
+.error {
+    border: 1px solid darkred;
+    padding: 1rem;
+    color: darkred;
+    background: rgba(255, 0, 0, 0.1);
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    background-color: #CBBCAB;
+}
+
+.carousel-inner {
+    display: flex;
+    overflow: hidden;
+    gap: 20px; /* Legger til et gap mellom lysbildene */
+}
+
+.carousel-slide {
+    flex: 0 0 auto;
+    width: 100%;
+    display: none;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+/*Blog-posts-container*/
+.blog-posts-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 100px 40px;
+    margin-bottom: 30px;
+    background-color: #605C53;
+}
+
+.blog-card {
+    flex: 1 0 30%;
+    position: relative; /* Legg til relativ posisjon */  
+}
+
+h3 {
+    margin-bottom: 10px; /* Legg til ekstra avstand mellom tittelen og knappen */
+    color:#F9F7F4;
+    font-size: 26px;
+    font-weight:400;
+}
+
+.product__image {
+    width: 100%;
+    height: 600px;
+    background-color: #fff;
+    object-fit: cover;
+}
+
+h2 {
+    display: block;
+    font-size: 1em;
+    text-align: left;
+    font-weight: bolder;
+}
+
+.cta-blog-posts {
+    position: absolute; /* Sett posisjon til absolutt */
+    bottom: 10; /* Plasser knappen nederst i kortet */
+    left: 0; /* Plasser knappen til venstre i kortet */
+    margin-top: 15px;
+    text-align: center; /* Legg til denne linjen for å sentrere teksten */
+    line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
+  
+    width: 100px; /* Angi ønsket bredde */
+    height: 30px; /* Angi ønsket høyde */
+    padding: 10px 25px 10px 25px;
+    background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
+    color: #F9F7F4; /* Legg til ønsket tekstfarge */
+    border: 1px solid #F9F7F4; /* Legg til en solid kantlinje */
+    border-radius: 0; /* Fjern avrundede hjørner */
+    font-size: 16px; /* Angi ønsket fontstørrelse */
+    cursor: pointer; /* Endre musepekeren til et håndikon */   
+}
+
+/*My-blog-post-container*/
+.my-blog-post-header,
+.read-header,
+.last-post-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+
+.my-blog-post-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 40px;
+    margin-bottom: 30px;
+    background-color: #CBBCAB;
+}
+
+.my-blog-post-card {
+    flex: 1;
+}
+
+.my-blog-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #fff;
+    object-fit: cover;
+}
+
+/*bottom-home-container*/
+
+.bottom-home-container {
+    max-width: 100%;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;   
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    padding: 20px 50px 20px 50px;
+    font-size: 18px;
+    background-color: #605C53;
+    max-height: 600px; 
+}
+
+.text-bottom-home-container {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 52px;
+    font-weight: lighter;
+    color:#F9F7F4;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cta-bottom-home {
+    width: 100px; /* Angi ønsket bredde */
+    height: 30px; /* Angi ønsket høyde */
+    padding: 10px 25px 10px 25px;
+    background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
+    color: #F9F7F4; /* Legg til ønsket tekstfarge */
+    border: 1px solid #F9F7F4; /* Legg til en solid kantlinje */
+    border-radius: 0; /* Fjern avrundede hjørner */
+    font-size: 16px; /* Angi ønsket fontstørrelse */
+    cursor: pointer; /* Endre musepekeren til et håndikon */   
+    text-align: center; /* Legg til denne linjen for å sentrere teksten */
+    line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
+    margin: 0 auto; /* Legg til denne linjen for å sentrere knappen horisontalt */
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-height: 600px;
+}
+
+.bottom-home-img{
+    display: flex;
+    flex: 1;
+    height: 500px;  
+    object-fit: cover;
+}
+
+/*Blog site*/
+.hr-line {
+    margin-top: 40px;
+}
+
+.blog-line {
+    width: 90%;
+    display: block;
+    border-top: 1px solid;
+    color:#2C2C2C;
+}
+
+.blog-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 100;
+    margin-bottom: 5px;  
+    margin-left: 5%; /* Juster marginen relativt til 5% av foreldrelementets bredde */
+    position: relative; /* Setter posisjonen til relativ for å kunne justere vertikalt */
+    top: 0.5em; /* Justerer vertikalt */
+    transform: translateY(-50%); /* Sentrerer teksten vertikalt */
+}
+
+   
+
+.blog-container {
+    max-width: 100%;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;   
+}
+
+.left-blog-container {
+    max-width: 500px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    padding: 20px 50px 20px 50px;
+    font-size: 18px;
+    background-color: #605C53;
+    max-height: 600px;  
+    margin-left: 5%; /* Juster marginen relativt til 5% av foreldrelementets bredde */
+    margin-left: auto; /* Plasser knappen i høyre hjørne av containeren */
+}
+
+.text-blog-container {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 52px;
+    font-weight: lighter;
+    color:#F9F7F4;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cta-blog {
+    width: 100px; /* Angi ønsket bredde */
+    height: 30px; /* Angi ønsket høyde */
+    padding: 10px 25px 10px 25px;
+    background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
+    color: #F9F7F4; /* Legg til ønsket tekstfarge */
+    border: 1px solid #F9F7F4; /* Legg til en solid kantlinje */
+    border-radius: 0; /* Fjern avrundede hjørner */
+    font-size: 16px; /* Angi ønsket fontstørrelse */
+    cursor: pointer; /* Endre musepekeren til et håndikon */   
+    text-align: center; /* Legg til denne linjen for å sentrere teksten */
+    line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
+    margin: 0 auto; /* Legg til denne linjen for å sentrere knappen horisontalt */
+    margin-left: 5%; /* Juster marginen relativt til 5% av foreldrelementets bredde */
+}
+ 
+
+.right-blog-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-height: 600px;
+}
+
+.blog-img {
+    display: flex;
+    flex: 1;
+    height: 500px;  
+    object-fit: cover;
+}
+
+.cta-blog-container {
+    display: flex;
+    justify-content: center; /* Sentrerer elementet horisontalt */
+    margin-top: 20px;
+}
+
+.cta-blog-bottom {
+    width: 100px; /* Angi ønsket bredde */
+    height: 30px; /* Angi ønsket høyde */
+    padding: 10px 25px 10px 25px;
+    background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
+    color: #2C2C2C; /* Legg til ønsket tekstfarge */
+    border: 1px solid #2C2C2C; /* Legg til en solid kantlinje */
+    border-radius: 0; /* Fjern avrundede hjørner */
+    font-size: 16px; /* Angi ønsket fontstørrelse */
+    cursor: pointer; /* Endre musepekeren til et håndikon */   
+    text-align: center; /* Legg til denne linjen for å sentrere teksten */
+    line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
+}
+
+
+
+
+
+
+
+
+
+
+/* Modal content */
+.modal {
+    display: none; /* Skjul modalen som standar */
+    position: fixed; /* Plasser modalen over hele siden */
+    z-index: 1; /* Plasser modalen øverst */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Gjennomsiktig bakgrunn for modal */
+}
+
+/* Modal innhold */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Lukkeknapp */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Footer*/
+.footer-container {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 10em;
+    background-color: #F2EDE7;
+    color:#2C2C2C; 
+    padding-bottom: 40px;
+    padding-top: 30px;
+    margin-top: 20px;
+ }
+
+.footer-heading {
+    font-size: 22px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: #2C2C2C;
+
+ }
+    
+.help>ul {
+    display: block;
+    margin: 0;
+    padding: 0; 
+    font-size: 20px;
+ }
+
+.li-footer>a,
+.icon {
+    text-decoration: none;
+    color: #2C2C2C;
+    font-size: 18px;
+ }
+
+ .icon {
+    color: #2C2C2C; /* Velg ønsket farge for ikonet */
+    font-size: 24px; /* Velg ønsket størrelse for ikonet */
+    margin-right: 10px; /* Legg til ønsket høyremarg til ikonet for plassering */
+}
+
+.help {
+    color: #2C2C2C;  
+    flex: 1; 
+    line-height: 1,6;
+ }
+
+.explor,
+.follow {
+    flex: 1; 
+    line-height: 1.6;
+    font-size: 20px; 
+}
+
+
+.line-footer {
+    width: 90%;
+    display: block;
+    border-top: 1px solid;
+    color:#2C2C2C; 
+    margin-top: -20px;
+}
