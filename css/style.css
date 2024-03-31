@@ -14,13 +14,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background-color:#F2EDE7;
+    background-color:#EFECE3;
 }
 
 .logo {
    font-size: 1.5em;
    text-decoration: none;
-   color: #2C2C2C;
+   color: #2D2D2D;
    font-family: "Playfair Display", serif;
 }
 
@@ -38,7 +38,7 @@ li {
 a {
     text-decoration: none;
     font-family: 'Playfair Display', serif;
-    color: #2C2C2C;
+    color: #2D2D2D;
 }
 
 .active {
@@ -49,7 +49,7 @@ a {
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 1px;
-    color: #2C2C2C;
+    color: #2D2D2D;
 }
 
 /*Banner-container*/
@@ -89,8 +89,8 @@ a {
     height: 40px; /* Angi ønsket høyde */
     padding: 10px 25px 10px 25px;
     background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
-    color: #2C2C2C; /* Legg til ønsket tekstfarge */
-    border: 1px solid #2C2C2C; /* Legg til en solid kantlinje */
+    color: #2D2D2D; /* Legg til ønsket tekstfarge */
+    border: 1px solid #2D2D2D; /* Legg til en solid kantlinje */
     border-radius: 0; /* Fjern avrundede hjørner */
     font-size: 16px; /* Angi ønsket fontstørrelse */
     cursor: pointer; /* Endre musepekeren til et håndikon */  
@@ -126,7 +126,7 @@ a {
     gap: 30px;
     padding: 20px 30px;
     margin-bottom: 30px;
-    background-color: #CBBCAB;
+    background-color: #C7BBA8;
 }
 
 .carousel-inner {
@@ -176,7 +176,7 @@ a {
     gap: 30px;
     padding: 100px 40px;
     margin-bottom: 30px;
-    background-color: #605C53;
+    background-color: #615C52;
 }
 
 .blog-card {
@@ -186,7 +186,7 @@ a {
 
 h3 {
     margin-bottom: 10px; /* Legg til ekstra avstand mellom tittelen og knappen */
-    color:#F9F7F4;
+    color:#F7F5F2;
     font-size: 26px;
     font-weight:400;
 }
@@ -217,8 +217,8 @@ h2 {
     height: 30px; /* Angi ønsket høyde */
     padding: 10px 25px 10px 25px;
     background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
-    color: #F9F7F4; /* Legg til ønsket tekstfarge */
-    border: 1px solid #F9F7F4; /* Legg til en solid kantlinje */
+    color: #F7F5F2; /* Legg til ønsket tekstfarge */
+    border: 1px solid #F7F5F2; /* Legg til en solid kantlinje */
     border-radius: 0; /* Fjern avrundede hjørner */
     font-size: 16px; /* Angi ønsket fontstørrelse */
     cursor: pointer; /* Endre musepekeren til et håndikon */   
@@ -242,7 +242,7 @@ h2 {
     gap: 30px;
     padding: 60px 40px;
     margin-bottom: 30px;
-    background-color: #CBBCAB;
+    background-color: #C7BBA8;
 }
 
 .my-blog-post-card {
@@ -276,7 +276,7 @@ h2 {
     justify-content: center;
     padding: 20px 50px 20px 50px;
     font-size: 18px;
-    background-color: #605C53;
+    background-color: #615C52;
     max-height: 600px; 
 }
 
@@ -285,7 +285,7 @@ h2 {
     font-style: italic;
     font-size: 52px;
     font-weight: lighter;
-    color:#F9F7F4;
+    color:#F7F5F2;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -295,8 +295,8 @@ h2 {
     height: 30px; /* Angi ønsket høyde */
     padding: 10px 25px 10px 25px;
     background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
-    color: #F9F7F4; /* Legg til ønsket tekstfarge */
-    border: 1px solid #F9F7F4; /* Legg til en solid kantlinje */
+    color: #F7F5F2; /* Legg til ønsket tekstfarge */
+    border: 1px solid #F7F5F2; /* Legg til en solid kantlinje */
     border-radius: 0; /* Fjern avrundede hjørner */
     font-size: 16px; /* Angi ønsket fontstørrelse */
     cursor: pointer; /* Endre musepekeren til et håndikon */   
@@ -328,7 +328,7 @@ h2 {
     width: 90%;
     display: block;
     border-top: 1px solid;
-    color:#2C2C2C;
+    color:#2D2D2D;
 }
 
 .blog-header {
@@ -363,7 +363,7 @@ h2 {
     justify-content: center;
     padding: 20px 50px 20px 50px;
     font-size: 18px;
-    background-color: #605C53;
+    background-color: #615C52;
     max-height: 600px;  
     margin-left: 5%; /* Juster marginen relativt til 5% av foreldrelementets bredde */
     margin-left: auto; /* Plasser knappen i høyre hjørne av containeren */
@@ -374,7 +374,7 @@ h2 {
     font-style: italic;
     font-size: 52px;
     font-weight: lighter;
-    color:#F9F7F4;
+    color:#F7F5F2;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -384,8 +384,8 @@ h2 {
     height: 30px; /* Angi ønsket høyde */
     padding: 10px 25px 10px 25px;
     background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
-    color: #F9F7F4; /* Legg til ønsket tekstfarge */
-    border: 1px solid #F9F7F4; /* Legg til en solid kantlinje */
+    color: #F7F5F2; /* Legg til ønsket tekstfarge */
+    border: 1px solid #F7F5F2; /* Legg til en solid kantlinje */
     border-radius: 0; /* Fjern avrundede hjørner */
     font-size: 16px; /* Angi ønsket fontstørrelse */
     cursor: pointer; /* Endre musepekeren til et håndikon */   
@@ -421,8 +421,8 @@ h2 {
     height: 30px; /* Angi ønsket høyde */
     padding: 10px 25px 10px 25px;
     background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
-    color: #2C2C2C; /* Legg til ønsket tekstfarge */
-    border: 1px solid #2C2C2C; /* Legg til en solid kantlinje */
+    color: #2D2D2D; /* Legg til ønsket tekstfarge */
+    border: 1px solid #2D2D2D; /* Legg til en solid kantlinje */
     border-radius: 0; /* Fjern avrundede hjørner */
     font-size: 16px; /* Angi ønsket fontstørrelse */
     cursor: pointer; /* Endre musepekeren til et håndikon */   
@@ -482,8 +482,8 @@ h2 {
     grid-auto-flow: column;
     justify-content: center;
     gap: 10em;
-    background-color: #F2EDE7;
-    color:#2C2C2C; 
+    background-color: #EFECE3;
+    color:#2D2D2D; 
     padding-bottom: 40px;
     padding-top: 30px;
     margin-top: 20px;
@@ -493,7 +493,7 @@ h2 {
     font-size: 22px;
     font-family: 'Playfair Display', serif;
     margin-bottom: 10px;
-    color: #2C2C2C;
+    color: #2D2D2D;
 
  }
     
@@ -507,18 +507,18 @@ h2 {
 .li-footer>a,
 .icon {
     text-decoration: none;
-    color: #2C2C2C;
+    color: #2D2D2D;
     font-size: 18px;
  }
 
  .icon {
-    color: #2C2C2C; /* Velg ønsket farge for ikonet */
+    color: #2D2D2D; /* Velg ønsket farge for ikonet */
     font-size: 24px; /* Velg ønsket størrelse for ikonet */
     margin-right: 10px; /* Legg til ønsket høyremarg til ikonet for plassering */
 }
 
 .help {
-    color: #2C2C2C;  
+    color: #2D2D2D;  
     flex: 1; 
     line-height: 1,6;
  }
@@ -535,6 +535,6 @@ h2 {
     width: 90%;
     display: block;
     border-top: 1px solid;
-    color:#2C2C2C; 
+    color:#2D2D2D; 
     margin-top: -20px;
 }
