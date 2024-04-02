@@ -175,7 +175,7 @@ a {
     justify-content: center;
     gap: 30px;
     padding: 100px 40px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     background-color: #615C52;
 }
 
@@ -258,13 +258,12 @@ h2 {
 }
 
 /*bottom-home-container*/
-
 .bottom-home-container {
     max-width: 100%;
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-top: 40px;   
+    margin-top: 60px;   
 }
 
 .left-container {
@@ -341,8 +340,6 @@ h2 {
     top: 0.5em; /* Justerer vertikalt */
     transform: translateY(-50%); /* Sentrerer teksten vertikalt */
 }
-
-   
 
 .blog-container {
     max-width: 100%;
@@ -430,51 +427,210 @@ h2 {
     line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
 }
 
+/*about page*/
+.about-container {
+    background-color: #615C52;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 30px;
+}
 
-
-
-
-
-
-
-
-
-/* Modal content */
-.modal {
-    display: none; /* Skjul modalen som standar */
-    position: fixed; /* Plasser modalen over hele siden */
-    z-index: 1; /* Plasser modalen øverst */
-    left: 0;
-    top: 0;
+.about-image {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Gjennomsiktig bakgrunn for modal */
+    object-fit: cover;  
 }
 
-/* Modal innhold */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
+.about-flexbox {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex; 
+    gap: 40px;
 }
 
-/* Lukkeknapp */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.about-flexbox * {
+    flex: 1;
+   
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.about-flexbox>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.about-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: lighter;
+    color:#F7F5F2;
+}
+
+.about-text>p {
+    color: #F7F5F2;
+}
+
+.amanda {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.cta-about {
+    width: 100px; /* Angi ønsket bredde */
+    height: 30px; /* Angi ønsket høyde */
+    padding: 10px 25px 10px 25px;
+    background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
+    color: #F7F5F2; /* Legg til ønsket tekstfarge */
+    border: 1px solid #F7F5F2; /* Legg til en solid kantlinje */
+    border-radius: 0; /* Fjern avrundede hjørner */
+    font-size: 16px; /* Angi ønsket fontstørrelse */
+    cursor: pointer; /* Endre musepekeren til et håndikon */   
+    text-align: center; /* Legg til denne linjen for å sentrere teksten */
+    line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
+}
+
+
+/*ny kan kanksje fjærnes*/
+.about-container-bottom {
+  
+
+
+    max-width: 100%;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 60px;   
+    background-color: #C7BBA8;
+    
+}
+
+.about-image-bottom {
+    object-fit: cover;  
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+.about-flexbox-bottom {
+   max-width: 100%;
+    margin: 0 auto;
+    display: flex; 
+    gap: 40px;   
+    align-items: center; /* Sentrerer elementene vertikalt */
+}
+
+
+.about-flexbox-bottom * {
+    flex: 1;  
+}
+
+.about-flexbox-bottom>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text-bottom>p {
+    color: #F7F5F2;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 46px;
+    text-align: center; /* Sentrerer teksten horisontalt */
+}
+
+.cta-about-bottom {
+    width: 100px; /* Angi ønsket bredde */
+    height: 30px; /* Angi ønsket høyde */
+    padding: 10px 25px 10px 25px;
+    background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
+    color: #F7F5F2; /* Legg til ønsket tekstfarge */
+    border: 1px solid #F7F5F2; /* Legg til en solid kantlinje */
+    border-radius: 0; /* Fjern avrundede hjørner */
+    font-size: 16px; /* Angi ønsket fontstørrelse */
+    cursor: pointer; /* Endre musepekeren til et håndikon */   
+    text-align: center; /* Legg til denne linjen for å sentrere teksten */
+    line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
+}
+
+/*contact me*/
+input, select, textarea {
+    border: none;
+    border-bottom: 1px solid #0A3641; /* Legger til en bunnlinje */
+    padding: 10px;
+    border-radius: 0;
+    background-color: transparent; /* Gjennomsiktig bakgrunn */
+    outline: none; /* Fjerner den blå fokuslinjen ved fokusering */
+} 
+
+/* Style for fokuslinjen på inputfeltene */
+input:focus, select:focus, textarea:focus {
+    border-bottom: 2px solid #0A3641; /* Endrer tykkelsen på bunnlinjen ved fokusering */
+}
+
+.contact-info-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 40px;
+    flex-wrap: wrap;/*kan fjernes*/
+}
+
+.contact-us-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    line-height: 1.8; 
+    flex: 1 1 45%; /* denne er lagt til */
+}
+
+.contact-input-style {
+    height: 247px;
+}
+
+.cta_send {
+ 
+    margin-top: 15px;
+   
+    height: 40px;
+    width: 110px;  
+    
+    
+    background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
+    color: #2D2D2D; /* Legg til ønsket tekstfarge */
+    border: 1px solid #2D2D2D; /* Legg til en solid kantlinje */
+    border-radius: 0; /* Fjern avrundede hjørner */
+    font-size: 16px; /* Angi ønsket fontstørrelse */
+    cursor: pointer; /* Endre musepekeren til et håndikon */   
+    text-align: center; /* Legg til denne linjen for å sentrere teksten */
+   
+}
+
+.cta-home-contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.container-contact {
+  max-width: 1000px;
+  background-color: #C7BBA8;
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 10px; /* Legg til ønsket padding */
+  margin-top: 30px;
+}
+
+.contact-us-container-one {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
 
 /*Footer*/
 .footer-container {
@@ -530,11 +686,52 @@ h2 {
     font-size: 20px; 
 }
 
-
 .line-footer {
     width: 90%;
     display: block;
     border-top: 1px solid;
     color:#2D2D2D; 
     margin-top: -20px;
+}
+
+.copy-rights {
+    background-color:#EFECE3;
+    padding-left: 5%;
+}
+
+/* Modal content */
+.modal {
+    display: none; /* Skjul modalen som standar */
+    position: fixed; /* Plasser modalen over hele siden */
+    z-index: 1; /* Plasser modalen øverst */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Gjennomsiktig bakgrunn for modal */
+}
+
+/* Modal innhold */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Lukkeknapp */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

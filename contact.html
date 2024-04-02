@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Design studio |Contact </title>
+    <title> Design studio | Contact </title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +14,10 @@
     <nav class="nav-menu">
         <a class="logo" href="/">DESIGN STUDIO</a>
         <ul>
-            <li><a href="index.html"class="active">HOME</a></li>
+            <li><a href="index.html">HOME</a></li>
             <li><a href="blog.html">READ</a></li>
             <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contact.html">CONTACT</a></li> 
+            <li><a href="contact.html"class="active">CONTACT</a></li> 
         </ul>
         <input type="text" placeholder="Search here.." class="search">
     </nav>
@@ -25,17 +25,45 @@
 
  <div class="hr-line"></div>
     <hr class="blog-line">
-    <h1 class="blog-header">BLOG POSTS</h1>
+    <h1 class="blog-header">CONTACT ME</h1>
     <hr class="blog-line">
  </div>
 
 
 
+ 
+
+
+
+<section class ="container-contact">
+    <div class="contact-info-container">
+        <form class="contact-us-container">
+            <label for="name">Name*</label>
+            <input type="text" id="name">
+            <label for="subject">Subject*</label>
+           <input type="text" id="subject">
+        </form>
+     
+        <form class="contact-us-container" method="post">
+          <label for="lastName">Last name*</label>
+          <input type="text" id="lastName">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="Email">
+        </form>
+        <form class="contact-us-container-one">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" class="contact-input-style"></textarea>
+          <input type="submit" value="Send Now" class="cta_send">
+        </form>
+       
+    </div>
+</section>
+
 
 
  <div class="hr-line"></div>
     <hr class="blog-line">
-    <h1 class="blog-header">BLOG POSTS</h1>
+    <h1 class="blog-header">DESIGN STUDIO</h1>
     <hr class="blog-line">
  </div>
 
@@ -81,6 +109,7 @@
       </div>
     </div>
     <hr class="line-footer">
+    <p class="copy-rights">&copy; 2024 Design Studio. All rights reserved.</p>
 </footer>
 
 
