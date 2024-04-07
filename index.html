@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,
     100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-   
 </head>
 <body>
     <nav class="nav-menu">
@@ -23,13 +22,10 @@
         <input type="text" placeholder="Search here.." class="search">
     </nav>
 <main>
-
     <section class="banner-img-container">
         <div class="banner-container">
           <p class="large-text">Design tips</p>
-          <p class="small-text">Use nature's organic shapes when designing your home. 
-            Create a beautiful home that provides
-            harmony and balance.</p>
+          <p class="small-text">Use nature's organic shapes when designing your home.</p>
           <a href="blog.html" class="cta-banner">READ MORE</a>
         </div>
     </section>
@@ -44,34 +40,50 @@
             <button class="carousel-prev">Previous</button>
             <button class="carousel-next">Next</button>
         </div>
-        
-    <h2 class="read-header">READ</h2>
+
+
+        <section class="carousel-container">
+            <div class="carousel-card carousel-featured">
+               <a href="blog.html">
+               <img class="carousel__image" src="images/home-fireplace.jpg" alt="Beautiful brick fireplace in brown earth tones"></a>
+            </div>
+    
+            <div class="carousel-card carousel-featured">
+               <a href="blog.html">
+               <img class="carousel__image" src="images/home-living-room.jpg" alt="Living room with large beige sofa, with round table and round mirror"></a>
+            </div>
+    
+            <div class="carousel-card carousel-featured">
+                <a href="blog.html">
+                <img class="carousel__image" src="images/home-bathroom.jpg" alt="Beautiful dark tiled bathroom, with large round mirror"></a>
+             </div>
+        </section>
+    
+ <h2 class="read-header">READ</h2>
 
     <section class="blog-posts-container">
         <div class="blog-card blog-featured">
            <a href="blog.html">
            <img class="product__image" src="images/home-fireplace.jpg" alt="Beautiful brick fireplace in brown earth tones"></a>
-           <h3>Create A Focal Point</h3>
-           <a href="blog.html" class="cta-blog-posts">VIEW ALL</a>
+           <h3 class="blog__header">Create A Focal Point</h3>
+           <a href="post.html" class="cta-blog-posts">VIEW ALL</a>
         </div>
 
-        
         <div class="blog-card blog-featured">
            <a href="blog.html">
            <img class="product__image" src="images/home-living-room.jpg" alt="Living room with large beige sofa, with round table and round mirror"></a>
-           <h3>Transform Your Living Room</h3>
+           <h3 class="blog__header">Transform Your Living Room</h3>
         </div>
-
 
         <div class="blog-card blog-featured">
             <a href="blog.html">
             <img class="product__image" src="images/home-bathroom.jpg" alt="Beautiful dark tiled bathroom, with large round mirror"></a>
-            <h3>Rounded Mirrors</h3>
+            <h3 class="blog__header">Rounded Mirrors</h3>
          </div>
-        
     </section>
 
     <h4 class="my-blog-post-header">My Blog Posts</h4>
+
     <section class="my-blog-post-container">
         <div class="my-blog-post-card">
             <a href="blog.html">
@@ -91,9 +103,6 @@
         </div>
     </section>
 
-
-
-
     <section class="bottom-home-container">
        <div class="left-container">
           <div class="container-text">
@@ -101,23 +110,15 @@
           </div>
           <a href="blog.html" class="cta-bottom-home">READ HERE</a>
        </div>
-
-
        <div class="right-blog-container">
          <img class="bottom-home-img" src="images/home-bedroom.jpg" alt="Bed with a beautiful gray headboard, many soft pillows in the bed.">
        </div>
     </section>
-
 </main>
-
-
-
-
-
 <footer>
     <div class="footer-container">
      <div class="help">
-       <h3 class="footer-heading">Help</h3>
+       <h6 class="footer-heading">Help</h6>
        <ul>
         <li class="li-footer">
             <a href="/contact.html">Contact</a>
@@ -128,7 +129,7 @@
        </ul>
      </div>
      <div class="explore">
-       <h3 class="footer-heading">Explore</h3> 
+       <h6 class="footer-heading">Explore</h6> 
        <ul>
         <li class="li-footer">
             <a href="/blog.html">Read</a>
@@ -136,7 +137,7 @@
        </ul>
      </div>
      <div class="follow">
-       <h3 class="footer-heading">Follow</h3>
+       <h6 class="footer-heading">Follow</h6>
        <ul>
         <li class="li-footer">
             <a href="#" class="icon"></a>
