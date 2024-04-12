@@ -19,3 +19,92 @@
         //modal.style.display ="none";
     //}
 //}
+
+
+document.addEventListener('DOMContentLoaded', async function () {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const postId = urlParams.get('id');
+
+    // Hent den spesifikke bloggposten basert på postId
+    async function fetchPost() {
+        try {
+            const response = await fetch(`https://veronicabp.com/ecommerce/wp-json/wp/v2/posts/${postId}`);
+            const post = await response.json();
+
+            displayPost(post);
+        } catch (error) {
+            console.error('Error fetching post:', error);
+        }
+    }
+
+    // Vis den spesifikke bloggposten
+    function displayPost(post) {
+        // Opprett et nytt seksjonselement for bloggposten
+        const postContainer = document.createElement('section');
+        postContainer.classList.add('post-container');
+
+        // Opprett et nytt div-element for overskriften
+        const postHeaderContainer = document.createElement('div');
+        postHeaderContainer.classList.add('post-header-container');
+
+        // Opprett et nytt h2-element for overskriften
+        const postHeader = document.createElement('h2');
+        postHeader.classList.add('post-header');
+        postHeader.textContent = post.title.rendered;
+
+        // Legg til overskriften i overskriftscontaineren
+        postHeaderContainer.appendChild(postHeader);
+
+        // Legg til overskriftscontaineren i post-containeren
+        postContainer.appendChild(postHeaderContainer);
+
+        // Opprett et nytt div-element for bildet
+        const postImageContainer = document.createElement('div');
+        postImageContainer.classList.add('post-image-container');
+
+        // Opprett et nytt img-element for bildet
+        const postImage = document.createElement('img');
+        postImage.classList.add('post__image');
+        postImage.src = post.jetpack_featured_media_url; // Endre til riktig bilde-URL
+        postImage.alt = post.title.rendered;
+
+        // Oppdater tittel til den spesifikke bloggposten
+        document.title = post.title.rendered + ' | My Blog';
+
+        // Legg til bildet i bildcontaineren
+        postImageContainer.appendChild(postImage);
+
+        // Legg til bildcontaineren i post-containeren
+        postContainer.appendChild(postImageContainer);
+
+        // Opprett et nytt seksjonselement for teksten
+        const postTextContainer = document.createElement('section');
+        postTextContainer.classList.add('post-text-container');
+
+        const postText = document.createElement('div');
+        postText.classList.add('post-text');
+        postText.innerHTML = post.content.rendered;
+
+        postTextContainer.appendChild(postText);
+
+        postContainer.appendChild(postTextContainer);
+
+        // Legg til den dynamisk genererte bloggposten i post-containeren
+        document.body.appendChild(postContainer);
+
+        // Fjern bildegalleri-innhold
+        document.querySelectorAll('.post-container *').forEach(element => {
+            if (isGalleryFigure(element)) {
+                element.remove();
+            }
+        });
+    }
+
+    fetchPost();
+});
+
+// Funksjon for å filtrere ut bildegalleri-innhold
+function isGalleryFigure(element) {
+    return element.tagName === 'FIGURE' && element.classList.contains('wp-block-gallery');
+}

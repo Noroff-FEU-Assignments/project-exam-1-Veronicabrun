@@ -75,7 +75,7 @@
 
 // wordpressApi.js
 
-// wordpressApi.js
+// wordpressApi.js denne fungerer til blo.html
 
 const apiUrl = 'https://veronicabp.com/ecommerce/wp-json/wp/v2/posts';
 
@@ -102,7 +102,7 @@ function displayPosts(posts) {
         leftContainer.innerHTML = `
             <div class="container-text">
                 <h2 class="text-blog-container">${post.title.rendered}</h2>
-                <a href="${post.link}" class="cta-blog">READ HERE</a>
+                <a href="post.html?id=${post.id}" class="cta-blog">READ HERE</a>
             </div>
         `;
 
@@ -120,3 +120,5 @@ function displayPosts(posts) {
 }
 
 fetchPosts();
+
+
