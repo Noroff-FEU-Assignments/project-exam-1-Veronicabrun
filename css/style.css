@@ -458,10 +458,11 @@ h2 {
 }
 
 .blog-container {
-    max-width: 100%;
+    max-width: 1500px;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 40px;
+    margin: auto;
    
 }
 
@@ -473,7 +474,7 @@ h2 {
 }
 
 .left-blog-container {
-    max-width: 500px;
+    max-width: 450px;
     min-height: 500px;
     display: flex;
     flex-direction: column;

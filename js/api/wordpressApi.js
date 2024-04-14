@@ -181,6 +181,21 @@ document.querySelector('.cta-blog-bottom').addEventListener('click', displayPost
 // Last inn de første 10 bloggpostene når siden lastes
 window.addEventListener('load', displayPosts);
 
+// Lyttefunksjon for klikk på "READ MORE" -knappen
+document.querySelector('.cta-blog-bottom').addEventListener('click', async function(event) {
+  event.preventDefault(); // Forhindrer standard oppførsel (å hoppe til toppen av siden)
+
+  // Sjekk om det allerede er lastet inn nok poster
+  const numberOfPosts = document.querySelectorAll('.blog-section').length;
+  if (numberOfPosts >= 10) {
+    console.log('All posts already loaded.');
+    return;
+  }
+
+  // Last inn flere poster
+  await displayPosts();
+});
+
 
 fetchPosts();
 
