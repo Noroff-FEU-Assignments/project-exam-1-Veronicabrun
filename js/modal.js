@@ -20,7 +20,6 @@
     //}
 //}
 
-
 document.addEventListener('DOMContentLoaded', async function () {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -90,8 +89,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         postContainer.appendChild(postTextContainer);
 
-        // Legg til den dynamisk genererte bloggposten i post-containeren
-        document.body.appendChild(postContainer);
+        // Finn plasseringen der du vil sette inn postContainer i HTML-strukturen
+        const mainElement = document.querySelector('main');
+        const secondHrLineDiv = document.querySelectorAll('.hr-line')[1];
+        mainElement.insertBefore(postContainer, secondHrLineDiv);
 
         // Fjern bildegalleri-innhold
         document.querySelectorAll('.post-container *').forEach(element => {
@@ -99,7 +100,38 @@ document.addEventListener('DOMContentLoaded', async function () {
                 element.remove();
             }
         });
+
+        // Legg til bildeklikk-hendelseslytteren i displayPost-funksjonen
+        postImage.addEventListener('click', function() {
+            openModal(post.jetpack_featured_media_url);
+        });
     }
+
+    // Funksjon for å åpne modalen og vise bildet
+    function openModal(imageUrl) {
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        modal.style.display = 'block';
+        modalImage.src = imageUrl;
+    }
+  
+    // Funksjon for å lukke modalen
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = 'none';
+    }
+  
+    // Legg til hendelseslytter for å lukke modalen når brukeren klikker utenfor bildet
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('modal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+  
+    // Legg til hendelseslytter for å lukke modalen når brukeren klikker på lukkeknappen
+    const closeButton = document.querySelector('.close');
+    closeButton.addEventListener('click', closeModal);
 
     fetchPost();
 });
@@ -108,3 +140,4 @@ document.addEventListener('DOMContentLoaded', async function () {
 function isGalleryFigure(element) {
     return element.tagName === 'FIGURE' && element.classList.contains('wp-block-gallery');
 }
+

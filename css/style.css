@@ -76,7 +76,7 @@ a {
     font-family: 'Playfair Display', serif;
     font-size: 72px;
     line-height: 1,5rem;
-    margin-top: 5px;
+    margin-bottom: 0;
 }
 
 .small-text {
@@ -352,9 +352,10 @@ h2 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 30px 30px;
+    padding: 60px 100px;
     max-width: 1000px;
     margin: 0 auto;
+    margin-top: 30px;
     background-color: #EFECE3;
 }
 
@@ -372,8 +373,8 @@ h2 {
 
 .post-text-container {
     background-color: #EFECE3; /* Bakgrunnsfarge */
-    padding: 20px; /* Padding rundt innhold */
     margin-bottom: 20px; /* Margin nederst */
+    padding-top: 20px;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -381,7 +382,7 @@ h2 {
 .post-header {
     text-align: center; /* Sørger for at teksten er sentrert */
     margin-top: 0; /* Fjerner eventuell toppmargin */
-    margin-bottom: 20px; /* Legg til ønsket bunnmargin */
+    margin-bottom: 50px; /* Legg til ønsket bunnmargin */
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     font-weight: 100;
@@ -393,6 +394,45 @@ h2 {
     line-height: 1.6; /* Linjeavstand */
 }
 
+/*modall*/
+.modal {
+    display: none; /* Skjul modalen som standard */
+    position: fixed;
+    z-index: 1; /* Plasser modalen foran alt annet innhold */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Legg til rullefelt hvis bildet er større enn vinduet */
+    background-color: rgba(0,0,0,0.9); /* Bakgrunnsfarge for modalen */
+  }
+  
+  /* Bildet inni modalen */
+  .modal-content {
+    display: block;
+    margin: auto; /* Senter bildet horisontalt */
+    max-width: 80%; /* Juster størrelsen på bildet etter behov */
+    max-height: 80vh; /* Juster størrelsen på bildet etter behov */
+  }
+  
+  /* Lukkeknappen */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
 
 /*Blog site*/
 .hr-line {
@@ -645,7 +685,7 @@ input, select, textarea {
 
 /* Style for fokuslinjen på inputfeltene */
 input:focus, select:focus, textarea:focus {
-    border-bottom: 2px solid #0A3641; /* Endrer tykkelsen på bunnlinjen ved fokusering */
+    border-bottom: 2px solid #615C52; /* Endrer tykkelsen på bunnlinjen ved fokusering */
 }
 
 .contact-info-container {
@@ -666,7 +706,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .contact-input-style {
-    height: 115px;
+    height: 80px;
 }
 
 .cta_send {
@@ -691,10 +731,9 @@ input:focus, select:focus, textarea:focus {
 .container-contact {
   max-width: 1000px;
   background-color: rgba(199, 187, 168, 0.14);
-
   margin: 0 auto;
   border-radius: 30px;
-  padding: 20px; /* Legg til ønsket padding */
+  padding: 30px; /* Legg til ønsket padding */
   margin-top: 30px;
 }
 
@@ -703,6 +742,12 @@ input:focus, select:focus, textarea:focus {
     display: flex;
     flex-direction: column;
     flex: 2;
+}
+
+.error-message {
+    color: #B22222; /* Farge for feilmeldingstekst */
+    font-size: 14px; /* Størrelse for feilmeldingstekst */
+    margin-top: 5px; /* Avstand over feilmeldingstekst */
 }
 
 
