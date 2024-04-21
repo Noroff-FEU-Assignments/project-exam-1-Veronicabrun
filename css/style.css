@@ -118,19 +118,7 @@ a {
 }
 
 /* Carousel */
-.carousel {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin:auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px 30px;
-    margin-bottom: 30px;
-    background-color: #C7BBA8;
-}
+
 
 .carousel-inner {
     display: flex;
@@ -162,13 +150,7 @@ a {
     padding: 10px 15px;
 }
 
-.carousel-prev {
-    left: 0;
-}
 
-.carousel-next {
-    right: 0;
-}
 
 /*dette kan kanskje slettes, teste */
 .carousel-container {
@@ -815,6 +797,7 @@ input:focus, select:focus, textarea:focus {
     color: #2D2D2D; /* Velg ønsket farge for ikonet */
     font-size: 24px; /* Velg ønsket størrelse for ikonet */
     margin-right: 10px; /* Legg til ønsket høyremarg til ikonet for plassering */
+    Padding: 5px;
 }
 
 .help {
@@ -837,6 +820,7 @@ input:focus, select:focus, textarea:focus {
     color:#2D2D2D; 
     margin-top: -20px;
 }
+
 
 .copy-rights {
     background-color:#EFECE3;

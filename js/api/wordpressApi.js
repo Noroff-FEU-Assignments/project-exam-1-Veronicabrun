@@ -1,53 +1,21 @@
 const apiUrl = 'https://veronicabp.com/ecommerce/wp-json/wp/v2/posts';
+let offset = 0;
 
+// Funksjon for å vise ladeindikatoren
+function showLoadingIndicator(container) {
+    const loadingIndicator = document.createElement('div');
+    loadingIndicator.classList.add('loading-indicator');
+    container.appendChild(loadingIndicator);
+}
 
-async function fetchPosts() {
-    try {
-        const response = await fetch(apiUrl);
-        const posts = await response.json();
-
-        displayPosts(posts);
-    } catch (error) {
-        console.error('Error fetching posts:', error);
+// Funksjon for å skjule ladeindikatoren
+function hideLoadingIndicator() {
+    const loadingIndicator = document.querySelector('.loading-indicator');
+    if (loadingIndicator) {
+        loadingIndicator.remove();
     }
 }
 
-
-function displayPosts(posts) {
-    const blogContainer = document.querySelector('.blog-container');
-
-    posts.forEach(post => {
-        const blogSection = document.createElement('section');
-        blogSection.classList.add('blog-section'); // Legg til en ny klasse for hver bloggseksjon
-
-        const leftContainer = document.createElement('div');
-        leftContainer.classList.add('left-blog-container');
-        leftContainer.innerHTML = `
-            <div class="container-text">
-                <h2 class="text-blog-container">${post.title.rendered}</h2>
-                <a href="post.html?id=${post.id}" class="cta-blog">READ HERE</a>
-            </div>
-        `;
-
-        const rightContainer = document.createElement('div');
-        rightContainer.classList.add('right-blog-container');
-        rightContainer.innerHTML = `
-            <img class="blog-img" src="${post.jetpack_featured_media_url}" alt="${post.title.rendered}">
-        `;
-
-        blogSection.appendChild(leftContainer);
-        blogSection.appendChild(rightContainer);
-
-        blogContainer.appendChild(blogSection);
-    });
-    
-}
-
-//Legge denne funksjonen i en egen fil?
-
-let offset = 0; // Antall poster som allerede er lastet inn
-
-// Funksjon for å hente bloggposter fra API-et
 async function fetchPosts() {
     try {
         const response = await fetch(`${apiUrl}?per_page=10&offset=${offset}`);
@@ -58,10 +26,13 @@ async function fetchPosts() {
     }
 }
 
-// Funksjon for å vise bloggposter på siden
 async function displayPosts() {
     const blogContainer = document.querySelector('.blog-container');
+    showLoadingIndicator(blogContainer); // Vis ladeindikatoren nær bloggpostene
+
     const posts = await fetchPosts();
+
+    hideLoadingIndicator(); // Skjul ladeindikatoren når postene er lastet inn
 
     if (!posts || posts.length === 0) {
         console.log('No more posts to load.');
@@ -117,8 +88,5 @@ document.querySelector('.cta-blog-bottom').addEventListener('click', async funct
   // Last inn flere poster
   await displayPosts();
 });
-
-
-fetchPosts();
 
 

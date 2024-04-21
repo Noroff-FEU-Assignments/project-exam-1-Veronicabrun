@@ -37,8 +37,18 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     }
 
+    // Vis ladeindikatoren mens bloggposten lastes inn
+    const loadingIndicator = document.createElement('div');
+    loadingIndicator.classList.add('loading-indicator');
+    const mainElement = document.querySelector('main');
+    const secondHrLineDiv = document.querySelectorAll('.hr-line')[1];
+    mainElement.insertBefore(loadingIndicator, secondHrLineDiv);
+
     // Vis den spesifikke bloggposten
     function displayPost(post) {
+        // Fjern ladeindikatoren
+        loadingIndicator.remove();
+
         // Opprett et nytt seksjonselement for bloggposten
         const postContainer = document.createElement('section');
         postContainer.classList.add('post-container');
@@ -90,8 +100,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         postContainer.appendChild(postTextContainer);
 
         // Finn plasseringen der du vil sette inn postContainer i HTML-strukturen
-        const mainElement = document.querySelector('main');
-        const secondHrLineDiv = document.querySelectorAll('.hr-line')[1];
         mainElement.insertBefore(postContainer, secondHrLineDiv);
 
         // Fjern bildegalleri-innhold
@@ -140,4 +148,5 @@ document.addEventListener('DOMContentLoaded', async function () {
 function isGalleryFigure(element) {
     return element.tagName === 'FIGURE' && element.classList.contains('wp-block-gallery');
 }
+
 
