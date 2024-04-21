@@ -1,82 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// wordpressApi.js
-
-//const apiUrl = 'https://veronicabp.com/ecommerce/wp-json/wp/v2/posts';
-
-//async function fetchPosts() {
-  //try {
-    //const response = await fetch(apiUrl);
-    //const posts = await response.json();
-    //displayPosts(posts);
-  //} catch (error) {
-    //console.error('Error fetching posts:', error);
-  //}
-//}
-
-//function displayPosts(posts) {
-  //const blogContainer = document.querySelector('.blog-container');
-  //blogContainer.innerHTML = ''; // Clear previous content
-
-  //posts.forEach(post => {
-    //const blogSection = document.createElement('section');
-    //blogSection.classList.add('blog-post');
-
-    //const leftContainer = document.createElement('div');
-    //leftContainer.classList.add('left-blog-container');
-
-    //const containerText = document.createElement('div');
-    //containerText.classList.add('container-text');
-
-    //const title = document.createElement('h2');
-    //title.classList.add('text-blog-container');
-    //title.textContent = post.title.rendered;
-
-    //const readLink = document.createElement('a');
-    //readLink.classList.add('cta-blog');
-    //readLink.setAttribute('href', post.link);
-    //readLink.textContent = 'READ HERE';
-
-    //containerText.appendChild(title);
-    //leftContainer.appendChild(containerText);
-    //leftContainer.appendChild(readLink);
-
-    //const rightContainer = document.createElement('div');
-    //rightContainer.classList.add('right-blog-container');
-
-    //const img = document.createElement('img');
-    //img.classList.add('blog-img');
-    //img.setAttribute('src', post.image_url); // Replace 'image_url' with the correct property for the image in your WordPress API response
-    //img.setAttribute('alt', post.image_alt); // Replace 'image_alt' with the correct property for the alt text in your WordPress API response
-
-    //rightContainer.appendChild(img);
-
-    //blogSection.appendChild(leftContainer);
-    //blogSection.appendChild(rightContainer);
-
-    //blogContainer.appendChild(blogSection);
-  //});
-//}
-
-//fetchPosts();
-
-
-// wordpressApi.js
-
-// wordpressApi.js denne fungerer til blo.html
-
 const apiUrl = 'https://veronicabp.com/ecommerce/wp-json/wp/v2/posts';
 
 
@@ -90,6 +11,7 @@ async function fetchPosts() {
         console.error('Error fetching posts:', error);
     }
 }
+
 
 function displayPosts(posts) {
     const blogContainer = document.querySelector('.blog-container');
