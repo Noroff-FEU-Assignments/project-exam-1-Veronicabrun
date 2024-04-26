@@ -6,8 +6,9 @@ body {
 
 body {
     font-family: "lato", "Playfair Display", Arial, Helvetica, sans-serif;
-    line-height: 1.5; 
+    line-height: 1.5;
 }
+
 /*Nav menu*/
 .nav-menu {
     display: flex;
@@ -98,6 +99,16 @@ a {
     font-weight: bold;
     cursor: pointer; /* Endre musepekeren til et håndikon */  
     line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
+     /* Legger til overgang for jevnere effekt */
+     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+     letter-spacing: .1em;
+}
+
+.cta-banner:hover,
+.cta-blog-bottom:hover   {
+   /* Endrer skriftfargen og kantfargen til en mer dempet nyanse når musepekeren er over knappen */
+   color: rgba(45, 45, 45, 0.5); /* Demper skriftfargen */
+   border-color: rgba(45, 45, 45, 0.5); /* Demper kantfargen */
 }
 
 .loading-indicator {
@@ -118,41 +129,6 @@ a {
 }
 
 /* Carousel */
-
-
-.carousel-inner {
-    display: flex;
-    overflow: hidden;
-    gap: 20px; /* Legger til et gap mellom lysbildene */
-}
-
-.carousel-slide {
-    flex: 0 0 auto;
-    width: 100%;
-    display: none;
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: auto;
-}
-
-.carousel-prev,
-.carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-}
-
-
-
-/*dette kan kanskje slettes, teste */
 .carousel-container {
     position: relative;
     display: flex;
@@ -162,10 +138,13 @@ a {
     gap: 30px;
     padding: 100px 40px;
     margin-bottom: 50px;
-    margin-left: 180px;
-    margin-right: 180px;
-    background-color: #C7BBA8;
-   
+    background-color: #C7BBA8; 
+}
+
+.carousel-inner {
+    display: flex;
+    overflow: hidden;
+    gap: 20px; /* Legger til et gap mellom lysbildene */
 }
 
 .carousel-card {
@@ -175,7 +154,7 @@ a {
 
 .carousel__image {
     width: 100%;
-    height: 500px;
+    height: 600px;
     background-color: #fff;
     object-fit: cover;
 }
@@ -186,11 +165,14 @@ a {
     top: 95%;
     transform: translateY(-50%);
     z-index: 2;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
     border: none;
-    color: black;
     padding: 10px 20px;
     cursor: pointer;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 24px;
 }
 
 .carousel-prev {
@@ -201,8 +183,7 @@ a {
     right: 10px;
 }
 
-
-/*Blog-posts-container*/
+/*Blog-posts-container-home*/
 .blog-posts-container {
     display: flex;
     flex-direction: row;
@@ -256,9 +237,30 @@ h2 {
     border-radius: 0; /* Fjern avrundede hjørner */
     font-size: 16px; /* Angi ønsket fontstørrelse */
     cursor: pointer; /* Endre musepekeren til et håndikon */   
+       /* Legger til overgang for jevnere effekt */
+       transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+       
 }
 
-/*My-blog-post-container*/
+.cta-blog-posts:hover,
+.cta-bottom-home:hover,
+.cta-blog:hover,
+.cta-about:hover,
+.cta-about-bottom:hover,
+.cta_send:hover  {
+    /* Endrer skriftfargen til en mer dempet nyanse når musepekeren er over knappen */
+    color: rgba(255, 255, 255, 0.5);
+    border-color:rgba(255, 255, 255, 0.5);
+}
+
+.small-header {
+    font-family: 'Playfair Display', serif;  
+    font-size: 28px;
+    font-style: italic;
+    margin-top: 0;
+}
+
+/*My-blog-post-container-home*/
 .my-blog-post-header,
 .read-header,
 .last-post-header {
@@ -266,6 +268,7 @@ h2 {
     font-size: 32px;
     font-weight: 100;
     margin-bottom: 5px;
+    margin-left: 10px;
 }
 
 .my-blog-post-container {
@@ -280,7 +283,7 @@ h2 {
 }
 
 .my-blog-post-card {
-    flex: 1;
+    margin: 0 auto; /* Senterer elementene ved hjelp av auto margin */
 }
 
 .my-blog-img {
@@ -336,6 +339,7 @@ h2 {
     text-align: center; /* Legg til denne linjen for å sentrere teksten */
     line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
     margin: 0 auto; /* Legg til denne linjen for å sentrere knappen horisontalt */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .right-container {
@@ -351,94 +355,6 @@ h2 {
     height: 500px;  
     object-fit: cover;
 }
-
-/*post site*/
-.post-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 60px 100px;
-    max-width: 1000px;
-    margin: 0 auto;
-    margin-top: 30px;
-    background-color: #EFECE3;
-}
-
-.post-card {
-    flex: 1 0 30%;
-    position: relative; /* Legg til relativ posisjon */  
-}
-
-.post__image {
-    width: 100%;
-    
-    background-color: #fff;
-    object-fit: cover;
-}
-
-.post-text-container {
-    background-color: #EFECE3; /* Bakgrunnsfarge */
-    margin-bottom: 20px; /* Margin nederst */
-    padding-top: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.post-header {
-    text-align: center; /* Sørger for at teksten er sentrert */
-    margin-top: 0; /* Fjerner eventuell toppmargin */
-    margin-bottom: 50px; /* Legg til ønsket bunnmargin */
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: 100;
-}
-
-.post-text {
-    color: #666; /* Farge for tekst */
-    font-size: 16px; /* Størrelse på tekst */
-    line-height: 1.6; /* Linjeavstand */
-}
-
-/*modall*/
-.modal {
-    display: none; /* Skjul modalen som standard */
-    position: fixed;
-    z-index: 1; /* Plasser modalen foran alt annet innhold */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Legg til rullefelt hvis bildet er større enn vinduet */
-    background-color: rgba(0,0,0,0.9); /* Bakgrunnsfarge for modalen */
-  }
-  
-  /* Bildet inni modalen */
-  .modal-content {
-    display: block;
-    margin: auto; /* Senter bildet horisontalt */
-    max-width: 80%; /* Juster størrelsen på bildet etter behov */
-    max-height: 80vh; /* Juster størrelsen på bildet etter behov */
-  }
-  
-  /* Lukkeknappen */
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
 
 /*Blog site*/
 .hr-line {
@@ -486,7 +402,6 @@ h2 {
     flex-direction: column;
     flex-wrap: wrap;
     flex: 1;
-    
     justify-content: center;
     padding: 20px 50px 20px 50px;
     font-size: 18px;
@@ -520,8 +435,8 @@ h2 {
     line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
     margin: 0 auto; /* Legg til denne linjen for å sentrere knappen horisontalt */
     margin-left: 5%; /* Juster marginen relativt til 5% av foreldrelementets bredde */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
- 
 
 .right-blog-container {
     display: flex;
@@ -555,8 +470,105 @@ h2 {
     cursor: pointer; /* Endre musepekeren til et håndikon */   
     text-align: center; /* Legg til denne linjen for å sentrere teksten */
     line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
+/*post site*/
+.post-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 60px 100px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #EFECE3;
+}
+
+.post-card {
+    flex: 1 0 30%;
+    position: relative; /* Legg til relativ posisjon */  
+}
+
+.post__image {
+    width: 100%;
+    background-color: #fff;
+    object-fit: cover;
+}
+
+.post-text-container {
+    background-color: #EFECE3; /* Bakgrunnsfarge */
+    margin-bottom: 20px; /* Margin nederst */
+    padding-top: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.post-header {
+    text-align: center; /* Sørger for at teksten er sentrert */
+    margin-top: 0; /* Fjerner eventuell toppmargin */
+    margin-bottom: 50px; /* Legg til ønsket bunnmargin */
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 100;
+}
+
+.post-text {
+    color: #666; /* Farge for tekst */
+    font-size: 16px; /* Størrelse på tekst */
+    line-height: 1.6; /* Linjeavstand */
+}
+
+/*modall*/
+.modal {
+    display: none; /* Skjul modalen som standard */
+    position: fixed;
+    z-index: 1; /* Plasser modalen foran alt annet innhold */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Legg til rullefelt hvis bildet er større enn vinduet */
+    background-color: rgba(0, 0, 0, 0.5); /* Gjennomsiktig bakgrunn for modal */
+  }
+  
+  
+  /* Bildet inni modalen */
+  .modal-content {
+    display: block;
+    margin: auto; /* Senter bildet horisontalt */
+    max-width: 80%; /* Juster størrelsen på bildet etter behov */
+    max-height: 80vh; /* Juster størrelsen på bildet etter behov */
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+  }
+  
+  /* Lukkeknappen */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/* Legg til håndpeker når musen svever over bilde */
+.post__image:hover {
+    cursor: pointer;
+  }
+    
 /*about page*/
 .about-container {
     background-color: #615C52;
@@ -579,8 +591,7 @@ h2 {
 }
 
 .about-flexbox * {
-    flex: 1;
-   
+    flex: 1;  
 }
 
 .about-flexbox>div{
@@ -599,6 +610,7 @@ h2 {
 
 .about-text>p {
     color: #F7F5F2;
+   
 }
 
 .amanda {
@@ -606,7 +618,8 @@ h2 {
     font-style: italic;
 }
 
-.cta-about {
+.cta-about,
+.cta-about-bottom  {
     width: 100px; /* Angi ønsket bredde */
     height: 30px; /* Angi ønsket høyde */
     padding: 10px 25px 10px 25px;
@@ -618,6 +631,7 @@ h2 {
     cursor: pointer; /* Endre musepekeren til et håndikon */   
     text-align: center; /* Legg til denne linjen for å sentrere teksten */
     line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 /*about page bottom*/
@@ -627,8 +641,7 @@ h2 {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 60px;   
-    background-color: #C7BBA8;
-    
+    background-color: #C7BBA8;   
 }
 
 .about-image-bottom {
@@ -664,20 +677,6 @@ h2 {
     font-weight: lighter;
     font-size: 46px;
     text-align: center; /* Sentrerer teksten horisontalt */
-}
-
-.cta-about-bottom {
-    width: 100px; /* Angi ønsket bredde */
-    height: 30px; /* Angi ønsket høyde */
-    padding: 10px 25px 10px 25px;
-    background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
-    color: #F7F5F2; /* Legg til ønsket tekstfarge */
-    border: 1px solid #F7F5F2; /* Legg til en solid kantlinje */
-    border-radius: 0; /* Fjern avrundede hjørner */
-    font-size: 16px; /* Angi ønsket fontstørrelse */
-    cursor: pointer; /* Endre musepekeren til et håndikon */   
-    text-align: center; /* Legg til denne linjen for å sentrere teksten */
-    line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
 }
 
 /*contact me*/
@@ -727,6 +726,7 @@ input:focus, select:focus, textarea:focus {
     font-size: 16px; /* Angi ønsket fontstørrelse */
     cursor: pointer; /* Endre musepekeren til et håndikon */   
     text-align: center; /* Legg til denne linjen for å sentrere teksten */ 
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .cta-home-contact {
@@ -821,45 +821,121 @@ input:focus, select:focus, textarea:focus {
     margin-top: -20px;
 }
 
-
 .copy-rights {
     background-color:#EFECE3;
     padding-left: 5%;
 }
 
-/* Modal content */
-.modal {
-    display: none; /* Skjul modalen som standar */
-    position: fixed; /* Plasser modalen over hele siden */
-    z-index: 1; /* Plasser modalen øverst */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Gjennomsiktig bakgrunn for modal */
+/*@media*/
+@media(max-width:1184px) {
+    .blog-section {
+        display: block; /* Endre visningen til blokker for å plassere dem under hverandre */
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .left-blog-container, .right-blog-container {
+        max-width: 100%; /* Fyller bredden av foreldreelementet */
+    }
+
+    .left-blog-container {
+ 
+    }
+  
 }
 
-/* Modal innhold */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
+@media(max-width:1123px) {
+    .about-flexbox {
+       flex-direction: column;   
+    
+    } 
+
+    .about-text {
+       margin-left: 40px;
+       margin-right: 40px;
+    }
+
+    .about-flexbox-bottom {
+       flex-direction: column;
+       gap: 0px;
+    }
+
+    .cta-item-bottom {
+        margin-bottom: 10px;
+    }
+
 }
 
-/* Lukkeknapp */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+@media(max-width:1100px){
+    .contact-info-container {
+        flex-direction: column;
+    }
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+@media(max-width:1474px) {
+    .my-blog-post-container {
+
+    }
+
+    .my-blog-post-card {
+        
+    }
 }
+
+@media(max-width:1013px) {
+    .carousel-inner {
+        flex-direction: column;
+        transform: translateY(-5%); /* Endre transform-verdien her */
+    }
+
+    .blog-posts-container {
+        flex-direction: column;
+    }
+
+   .cta-blog-posts {
+        display:none;
+    }
+
+   .my-blog-post-header, 
+   .read-header, 
+   .last-post-header {
+        display: flex; /* Bruk flexbox for å sentrere vertikalt */
+        justify-content: center; /* Sentrer teksten horisontalt */
+        align-items: center; /* Sentrer teksten vertikalt */
+    }
+
+}
+
+@media(max-width:906px) {
+    .bottom-home-container {
+        flex-direction: column;
+    }
+}
+
+@media(max-width:836px) {
+    .my-blog-post-container {
+        flex-direction: column;  
+    }
+
+
+    .footer-container {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 10px;
+    }
+
+    .help, 
+    .explore {
+       width: 50%;
+       margin-left: 50px;
+    }
+
+    .follow {
+      width: 100%;
+      margin-left: 50px;       
+    }
+
+}
+
+
+

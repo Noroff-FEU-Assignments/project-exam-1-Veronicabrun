@@ -10,10 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,
     100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   
 </head>
 <body>
     <nav class="nav-menu">
         <a class="logo" href="/">DESIGN STUDIO</a>
+        
         <ul>
             <li><a href="index.html"class="active">HOME</a></li>
             <li><a href="blog.html">READ</a></li>
@@ -21,7 +24,13 @@
             <li><a href="contact.html">CONTACT</a></li> 
         </ul>
         <input type="text" placeholder="Search here.." class="search">
+        
     </nav>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+  
+   
 <main>
     <section class="banner-img-container">
         <div class="banner-container">
@@ -39,29 +48,36 @@
             <button class="carousel-next"><i class="fas fa-arrow-right"></i></button>
         </section>
     <h2 class="read-header">READ</h2>
+
     <section class="blog-posts-container">
         <div class="blog-card blog-featured">
-           <a href="blog.html">
-           <img class="product__image" src="images/home-fireplace.jpg" alt="Beautiful brick fireplace in brown earth tones"></a>
-           <h3 class="blog__header">Create A Focal Point</h3>
-           <a href="post.html" class="cta-blog-posts">VIEW ALL</a>
+            <a href="blog.html" class="blog-card-link">
+                <img class="product__image" src="images/home-fireplace.jpg" alt="Beautiful brick fireplace in brown earth tones">
+                <h3 class="blog__header">Create A Focal Point</h3>
+            </a>
+            <a href="blog.html" class="cta-blog-posts">VIEW ALL</a>
         </div>
-
         <div class="blog-card blog-featured">
-           <a href="blog.html">
-           <img class="product__image" src="images/home-living-room.jpg" alt="Living room with large beige sofa, with round table and round mirror"></a>
-           <h3 class="blog__header">Transform Your Living Room</h3>
+            <a href="blog.html" class="blog-card-link">
+                <img class="product__image" src="images/home-living-room.jpg" alt="Living room with large beige sofa, with round table and round mirror">
+                <h3 class="blog__header">Transform Your Living Room</h3>
+            </a>
+           
         </div>
-
         <div class="blog-card blog-featured">
-            <a href="blog.html">
-            <img class="product__image" src="images/home-bathroom.jpg" alt="Beautiful dark tiled bathroom, with large round mirror"></a>
-            <h3 class="blog__header">Rounded Mirrors</h3>
-         </div>
+            <a href="blog.html" class="blog-card-link">
+                <img class="product__image" src="images/home-bathroom.jpg" alt="Beautiful dark tiled bathroom, with large round mirror">
+                <h3 class="blog__header">Rounded Mirrors</h3>
+            </a>
+            
+        </div>
     </section>
+    
 
-    <h4 class="my-blog-post-header">My Blog Posts</h4>
-
+    
+    
+    <h4 class="my-blog-post-header">Follow</h4>
+    <p class="small-header">@Designstudio</p>
     <section class="my-blog-post-container">
         <div class="my-blog-post-card">
             <a href="blog.html">
@@ -80,7 +96,6 @@
             <img class="my-blog-img" src="images/home-terracotta.jpg" alt="beautiful terracotta vase, with dark background"</a>
         </div>
     </section>
-
     <section class="bottom-home-container">
        <div class="left-container">
           <div class="container-text">
@@ -137,6 +152,5 @@
       <p class="copy-rights">&copy; 2024 Design Studio. All rights reserved.</p>
 </footer>
     <script src="js/carousel.js"></script>
-    <script src="js/bannerImage.js"></script>
 </body>
 </html>
