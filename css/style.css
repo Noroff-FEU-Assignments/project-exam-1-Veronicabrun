@@ -27,7 +27,8 @@ body {
 
 ul {
     list-style-type: none;
-    margin: 0;
+    margin: auto; /* Sentrer <ul> elementet */
+  
     padding: 0;
     display: flex;
 }
@@ -54,6 +55,17 @@ a {
     background-color: #FFFF;
 }
 
+/*hamburgermenu*/
+/* Legg til denne CSS-koden for å skjule avkryssningsboksen */
+#menu-toggle {
+    display: none;
+}
+
+/* Legg til denne CSS-koden for å style hamburgerikonet */
+.menu-icon i {
+    display: none;
+}
+
 /*Banner-container*/
 .banner-img-container {
     position: relative;
@@ -69,7 +81,7 @@ a {
     margin: 0 auto;
     padding: 30px;
     position: absolute;
-    top: 100px;  
+    top: 45px;  
 }
 
 .large-text {
@@ -136,9 +148,9 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    padding: 100px 40px;
+    padding: 20px 40px;
     margin-bottom: 50px;
-    background-color: #C7BBA8; 
+ 
 }
 
 .carousel-inner {
@@ -154,7 +166,7 @@ a {
 
 .carousel__image {
     width: 100%;
-    height: 600px;
+    height: 500px;
     background-color: #fff;
     object-fit: cover;
 }
@@ -162,7 +174,7 @@ a {
 .carousel-prev,
 .carousel-next {
     position: absolute;
-    top: 95%;
+    top: 104%;
     transform: translateY(-50%);
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.5);
@@ -209,7 +221,7 @@ a {
 
 .product__image {
     width: 100%;
-    height: 600px;
+    height: 450px;
     background-color: #fff;
     object-fit: cover;
 }
@@ -276,7 +288,7 @@ h2 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
     padding: 60px 40px;
     margin-bottom: 30px;
     background-color: #C7BBA8;
@@ -287,8 +299,8 @@ h2 {
 }
 
 .my-blog-img {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     background-color: #fff;
     object-fit: cover;
@@ -380,7 +392,7 @@ h2 {
 }
 
 .blog-container {
-    max-width: 1500px;
+    max-width: 1000px;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 40px;
@@ -396,8 +408,8 @@ h2 {
 }
 
 .left-blog-container {
-    max-width: 450px;
-    min-height: 500px;
+    max-width: 300px;
+    min-height: 330px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -407,14 +419,14 @@ h2 {
     font-size: 18px;
     background-color: #615C52;
     max-height: 600px;  
-    margin-left: 5%; /* Juster marginen relativt til 5% av foreldrelementets bredde */
+    
     margin-left: auto; /* Plasser knappen i høyre hjørne av containeren */
 }
 
 .text-blog-container {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 52px;
+    font-size: 36px;
     font-weight: lighter;
     color:#F7F5F2;
     padding-left: 20px;
@@ -424,7 +436,7 @@ h2 {
 .cta-blog {
     width: 100px; /* Angi ønsket bredde */
     height: 30px; /* Angi ønsket høyde */
-    padding: 10px 25px 10px 25px;
+    padding: 10px 20px 10px 20px;
     background-color: transparent; /* Angi gjennomsiktig bakgrunnsfarge */
     color: #F7F5F2; /* Legg til ønsket tekstfarge */
     border: 1px solid #F7F5F2; /* Legg til en solid kantlinje */
@@ -447,8 +459,9 @@ h2 {
 
 .blog-img {
     display: flex;
-    flex: 1;
-    height: 500px;  
+ 
+    height: 400px; 
+    width: 100%; 
     object-fit: cover;
 }
 
@@ -883,22 +896,41 @@ input:focus, select:focus, textarea:focus {
 }
 
 @media(max-width:1013px) {
+    .carousel-container {
+        margin-top: 76px;
+        margin-bottom: -75px;
+       
+    }
+    
+    .banner-img-container {
+       margin-bottom: 20px; 
+    }
+
     .carousel-inner {
         flex-direction: column;
         transform: translateY(-5%); /* Endre transform-verdien her */
     }
 
+    .carousel-prev, .carousel-next {
+        display: none;
+    }
+
     .blog-posts-container {
         flex-direction: column;
+        margin-top: 20px;
+        margin-bottom:30px;
     }
 
    .cta-blog-posts {
         display:none;
     }
 
+
    .my-blog-post-header, 
    .read-header, 
-   .last-post-header {
+   .last-post-header,
+   .small-header {
+    margin:0 auto;
         display: flex; /* Bruk flexbox for å sentrere vertikalt */
         justify-content: center; /* Sentrer teksten horisontalt */
         align-items: center; /* Sentrer teksten vertikalt */
@@ -916,7 +948,6 @@ input:focus, select:focus, textarea:focus {
     .my-blog-post-container {
         flex-direction: column;  
     }
-
 
     .footer-container {
        display: flex;
@@ -937,5 +968,82 @@ input:focus, select:focus, textarea:focus {
 
 }
 
+/* Legg til denne CSS-koden for å skjule menyen når skjermstørrelsen er mindre enn 831px */
+@media screen and (max-width: 500px) {
+    .nav-menu ul {
+      display: none;
+    }
+  
+  /* Legg til denne CSS-koden for å vise hamburgermenyen når skjermstørrelsen er mindre enn 831px */
+    .menu-icon i {
+      display: block;
+    }
 
+
+  
+/* Vis ul-menyen når #menu-toggle er merket */
+#menu-toggle:checked ~ ul {
+    display: block;
+}
+
+/* Vis hamburgerikonet når #menu-toggle er merket */
+#menu-toggle:checked + .menu-icon i {
+    display: inline;
+}
+
+.search {
+    margin-top: 5px;
+}
+
+
+.large-text {
+    font-size:62px;
+}
+
+.small-text {
+    font-size:22px;
+}
+}
+
+@media screen and (max-width: 831px) {
+.nav-menu {
+    flex-direction: column; /* Endre retningen til flex-containeren til kolonne */
+}
+
+.nav-menu .logo,
+.nav-menu .search {
+    width: 100%; /* La logoen og søkefeltet oppta hele bredden */
+   
+}
+
+.nav-menu .search {
+    order: 2; /* Endre rekkefølgen for søkefeltet */
+}
+
+.nav-menu {
+display: block;
+line-height: 30px;
+padding-left:10px;
+
+}
+
+.logo {
+    display: none;
+}
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:431px) {
+    .about-text-bottom>p{
+        font-size:40px;
+    }
+}
 
