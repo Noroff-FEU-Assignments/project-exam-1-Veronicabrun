@@ -113,7 +113,6 @@ a {
     line-height: 30px; /* Juster linjehøyden for å oppnå vertikal midtstilling */
      /* Legger til overgang for jevnere effekt */
      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-     letter-spacing: .1em;
 }
 
 .cta-banner:hover,
@@ -250,8 +249,7 @@ h2 {
     font-size: 16px; /* Angi ønsket fontstørrelse */
     cursor: pointer; /* Endre musepekeren til et håndikon */   
        /* Legger til overgang for jevnere effekt */
-       transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-       
+       transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;      
 }
 
 .cta-blog-posts:hover,
@@ -270,17 +268,18 @@ h2 {
     font-size: 28px;
     font-style: italic;
     margin-top: 0;
+    margin-left: 37px;
 }
 
 /*My-blog-post-container-home*/
-.my-blog-post-header,
+.follow-me-header,
 .read-header,
 .last-post-header {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     font-weight: 100;
     margin-bottom: 5px;
-    margin-left: 10px;
+    margin-left: 37px;
 }
 
 .my-blog-post-container {
@@ -325,7 +324,7 @@ h2 {
     padding: 20px 50px 20px 50px;
     font-size: 18px;
     background-color: #615C52;
-    max-height: 600px; 
+    max-height: 570px; 
 }
 
 .text-bottom-home-container {
@@ -364,7 +363,7 @@ h2 {
 .bottom-home-img{
     display: flex;
     flex: 1;
-    height: 500px;  
+    height: 570px;  
     object-fit: cover;
 }
 
@@ -392,7 +391,7 @@ h2 {
 }
 
 .blog-container {
-    max-width: 1000px;
+    max-width: 1100px;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 40px;
@@ -518,10 +517,14 @@ h2 {
     margin: 0 auto;
 }
 
+.post-image-container {
+ 
+}
+
 .post-header {
     text-align: center; /* Sørger for at teksten er sentrert */
     margin-top: 0; /* Fjerner eventuell toppmargin */
-    margin-bottom: 50px; /* Legg til ønsket bunnmargin */
+    margin-bottom: 30px; /* Legg til ønsket bunnmargin */
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     font-weight: 100;
@@ -912,7 +915,9 @@ input:focus, select:focus, textarea:focus {
     }
 
     .carousel-prev, .carousel-next {
-        display: none;
+        top: 11%;
+        margin-right: 41px;
+        margin-left: 41px;
     }
 
     .blog-posts-container {
@@ -926,7 +931,7 @@ input:focus, select:focus, textarea:focus {
     }
 
 
-   .my-blog-post-header, 
+   .follow-me-header, 
    .read-header, 
    .last-post-header,
    .small-header {
@@ -1003,6 +1008,8 @@ input:focus, select:focus, textarea:focus {
 .small-text {
     font-size:22px;
 }
+
+
 }
 
 @media screen and (max-width: 831px) {
@@ -1013,6 +1020,7 @@ input:focus, select:focus, textarea:focus {
 .nav-menu .logo,
 .nav-menu .search {
     width: 100%; /* La logoen og søkefeltet oppta hele bredden */
+    margin-top: 10px;
    
 }
 
@@ -1035,7 +1043,12 @@ padding-left:10px;
 }
 
 
-
+@media(max-width: 1199px) {
+    .post-container {
+    padding: 15px;
+       
+    }
+}
 
 
 
