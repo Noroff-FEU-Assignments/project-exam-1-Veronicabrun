@@ -1,14 +1,17 @@
 const apiUrl = 'https://veronicabp.com/ecommerce/wp-json/wp/v2/posts';
 let offset = 0;
 
-// Funksjon for å vise ladeindikatoren
+import { displayErrorMessage, removeErrorMessage } from './error-message.js';
+
+
+// Function to display the charging indicator
 function showLoadingIndicator(container) {
     const loadingIndicator = document.createElement('div');
     loadingIndicator.classList.add('loading-indicator');
     container.appendChild(loadingIndicator);
 }
 
-// Funksjon for å skjule ladeindikatoren
+// Function to hide the charging indicator
 function hideLoadingIndicator() {
     const loadingIndicator = document.querySelector('.loading-indicator');
     if (loadingIndicator) {
@@ -19,20 +22,29 @@ function hideLoadingIndicator() {
 async function fetchPosts() {
     try {
         const response = await fetch(`${apiUrl}?per_page=10&offset=${offset}`);
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
         const posts = await response.json();
         return posts;
     } catch (error) {
         console.error('Error fetching posts:', error);
+        throw error; // Kast feilen videre for å fange den i displayPosts
     }
 }
 
 async function displayPosts() {
     const blogContainer = document.querySelector('.blog-container');
-    showLoadingIndicator(blogContainer); // Vis ladeindikatoren nær bloggpostene
+   
+    showLoadingIndicator(blogContainer); // Show the loading indicator near the blog posts
+
+    try {
 
     const posts = await fetchPosts();
 
-    hideLoadingIndicator(); // Skjul ladeindikatoren når postene er lastet inn
+    hideLoadingIndicator(); // Hide the loading indicator when the records are loaded
 
     if (!posts || posts.length === 0) {
         console.log('No more posts to load.');
@@ -64,28 +76,38 @@ async function displayPosts() {
         blogContainer.appendChild(blogSection);
     });
 
-    // Øk offset for neste kall
+   // Increase offset for next call
     offset += 10;
 }
+catch (error) {
+    console.error('Error displaying posts:', error);
+    // Her kan du vurdere å vise en feilmelding til brukeren eller håndtere feilen på en annen måte
+    // Viser feilmelding til brukeren
+    displayErrorMessage('Something went wrong while retrieving posts. Please try again later.');
+    
+    
+} finally {
+    hideLoadingIndicator(); // Skjuler ladeindikatoren uavhengig av om det oppstod en feil eller ikke
+}
+}
 
-// Lyttefunksjon for klikk på "READ MORE" -knappen
+// Listen function for click on "READ MORE" button
 document.querySelector('.cta-blog-bottom').addEventListener('click', displayPosts);
 
-// Last inn de første 10 bloggpostene når siden lastes
+// Load the first 10 blog posts when the page loads
 window.addEventListener('load', displayPosts);
 
-// Lyttefunksjon for klikk på "READ MORE" -knappen
+// Listen function for click on "READ MORE" button
 document.querySelector('.cta-blog-bottom').addEventListener('click', async function(event) {
-  event.preventDefault(); // Forhindrer standard oppførsel (å hoppe til toppen av siden)
+  event.preventDefault(); // Prevents default behavior (jumping to the top of the page)
 
-  // Sjekk om det allerede er lastet inn nok poster
+// Check if enough records have already been loaded
   const numberOfPosts = document.querySelectorAll('.blog-section').length;
   if (numberOfPosts >= 10) {
     console.log('All posts already loaded.');
     return;
   }
-
-  // Last inn flere poster
+// Load more records
   await displayPosts();
 });
 

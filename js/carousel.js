@@ -1,62 +1,35 @@
-
-//const apiUrl = 'https://veronicabp.com/ecommerce/wp-json/wp/v2/posts';
-
-//async function fetchPosts() {
-  //try {
-    //const response = await fetch(apiUrl);
-    //const posts = await response.json();
-    //displayPosts(posts);
-  //} catch (error) {
-   // console.error('Error fetching posts:', error);
-  //}
-//}
-
-//function displayPosts(posts) {
-  //const carouselInner = document.querySelector('.carousel-inner');
-  //carouselInner.innerHTML = ''; // Clear previous content
-  //posts.forEach(post => {
-    //const slide = document.createElement('div');
-    //slide.classList.add('carousel-slide');
-    //slide.innerHTML = `
-      //<h2>${post.title.rendered}</h2>
-      //<p>${post.content.rendered}</p>
-    //`;
-    //carouselInner.appendChild(slide);
-  //});
-//}
-
 const apiUrl = 'https://veronicabp.com/ecommerce/wp-json/wp/v2/posts';
 const carouselContainer = document.querySelector('.carousel-container');
 const carouselInner = carouselContainer.querySelector('.carousel-inner');
 const carouselPrevButton = carouselContainer.querySelector('.carousel-prev');
 const carouselNextButton = carouselContainer.querySelector('.carousel-next');
 
-let currentIndex = 0; // Indeks for gjeldende bilde som vises
-let images = []; // Globalt omfang for bildedata
+let currentIndex = 0; // Index of current image displayed
+let images = []; // Global scope for image data
 
-// Opprett ladeindikatoren
+// Create the charging indicator
 const loadingIndicator = document.createElement('div');
 loadingIndicator.classList.add('loading-indicator');
 carouselContainer.appendChild(loadingIndicator);
 
-// Funksjon for å vise ladeindikatoren
+// Function to display the charging indicator
 function showLoadingIndicator() {
     loadingIndicator.style.display = 'block';
 }
 
-// Funksjon for å skjule ladeindikatoren
+// Function to hide the charging indicator
 function hideLoadingIndicator() {
     loadingIndicator.style.display = 'none';
 }
 
-// Funksjon for å hente bildedata fra API-et
+// Function to retrieve image data from the API
 async function fetchImages() {
     try {
-        showLoadingIndicator(); // Vis ladeindikatoren før henting av bilder
+        showLoadingIndicator(); // Show the loading indicator before retrieving images
         const response = await fetch(apiUrl);
         const posts = await response.json();
 
-        // Hent ut bilde-URL-ene fra API-responsen
+        // Extract the image URLs from the API response
         images = posts.map(post => ({
             src: post.jetpack_featured_media_url,
             alt: post.title.rendered
@@ -66,28 +39,28 @@ async function fetchImages() {
     } catch (error) {
         console.error('Error fetching images:', error);
     } finally {
-        hideLoadingIndicator(); // Skjul ladeindikatoren etter at bildedata er hentet
+        hideLoadingIndicator(); // Hide the loading indicator after image data is fetched
     }
 }
 
-// Funksjon for å oppdatere karusellen med bilder
+// Function to update the carousel with images
 async function updateCarousel() {
     if (!images || images.length === 0) {
         console.log('No images found.');
         return;
     }
 
-    // Fjern tidligere bildeelementer
+    // Remove previous image elements
     carouselInner.innerHTML = '';
 
-    // Begrens visningen til bare tre bilder
+    // Limit the view to only three images
     const startIndex = currentIndex;
     const endIndex = Math.min(currentIndex + 3, images.length);
 
     for (let i = startIndex; i < endIndex; i++) {
         const image = images[i];
 
-        // Opprett karusellelementer
+        // Create carousel elements
         const carouselCard = document.createElement('div');
         carouselCard.classList.add('carousel-card', 'carousel-featured');
 
@@ -96,36 +69,36 @@ async function updateCarousel() {
         img.src = image.src;
         img.alt = image.alt;
 
-        // Juster opasiteten til bilde basert på om det er det gjeldende bildet eller ikke
+        // Adjust the opacity of image based on whether it is the current image or not
         if (i === currentIndex) {
-            img.style.opacity = 1; // Gjeldende bilde
+            img.style.opacity = 1; // Current image
         } else {
-            img.style.opacity = 0.5; // Andre bilder
+            img.style.opacity = 0.5; // Other images
         }
 
         const link = document.createElement('a');
         link.href = 'blog.html';
         link.appendChild(img);
 
-        // Legg karusellelementer til karusell-containeren
+       // Add carousel elements to the carousel container
         carouselCard.appendChild(link);
         carouselInner.appendChild(carouselCard);
     }
 }
 
-// Klikkfunksjon for å gå til forrige bilde
+// Click function to go to previous image
 carouselPrevButton.addEventListener('click', () => {
     currentIndex = Math.max(0, currentIndex - 1);
     updateCarousel();
 });
 
-// Klikkfunksjon for å gå til neste bilde
+// Click function to go to the next image
 carouselNextButton.addEventListener('click', () => {
     currentIndex = Math.min(currentIndex + 1, images.length - 1);
     updateCarousel();
 });
 
-// Kall funksjonen for å hente bildedata og oppdatere karusellen ved lasting av siden
+// Call the function to retrieve image data and update the carousel on page load
 fetchImages().then(updateCarousel);
 
 

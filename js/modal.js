@@ -1,31 +1,9 @@
-// Henter modalen og knappen for å åpne modalen
-//const modal = document.getElementById("myModal");
-//const btn = document.getElementById("myBtn");
-//const span = document.getElementsByClassName("close")[0];
-
-// Når brukeren klikker på knappen, åpner modalen
-//btn.onclick = function() {
-    //modal.style.display = "block";
-//}
-
-// Når brukeren klikker på lukkeknappen (x), lukker modalen
-//span.onclick = funcktion() {
-    //modal.style.display = "none";
-//}
-
-// Når brukeren klikker utenfor modalen, lukker modalen
-//window.onclick = function(event) {
-    //if (event.target == modal) {
-        //modal.style.display ="none";
-    //}
-//}
-
 document.addEventListener('DOMContentLoaded', async function () {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const postId = urlParams.get('id');
 
-    // Hent den spesifikke bloggposten basert på postId
+    // Get the specific blog post based on postId
     async function fetchPost() {
         try {
             const response = await fetch(`https://veronicabp.com/ecommerce/wp-json/wp/v2/posts/${postId}`);
@@ -37,57 +15,57 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     }
 
-    // Vis ladeindikatoren mens bloggposten lastes inn
+    // Show the loading indicator while the blog post is loading
     const loadingIndicator = document.createElement('div');
     loadingIndicator.classList.add('loading-indicator');
     const mainElement = document.querySelector('main');
     const secondHrLineDiv = document.querySelectorAll('.hr-line')[1];
     mainElement.insertBefore(loadingIndicator, secondHrLineDiv);
 
-    // Vis den spesifikke bloggposten
+   // Display the specific blog post
     function displayPost(post) {
-        // Fjern ladeindikatoren
+      // Remove the charging indicator
         loadingIndicator.remove();
 
-        // Opprett et nytt seksjonselement for bloggposten
+      // Create a new section element for the blog post
         const postContainer = document.createElement('section');
         postContainer.classList.add('post-container');
 
-        // Opprett et nytt div-element for overskriften
+       // Create a new div element for the header
         const postHeaderContainer = document.createElement('div');
         postHeaderContainer.classList.add('post-header-container');
 
-        // Opprett et nytt h2-element for overskriften
+       // Create a new h2 element for the header
         const postHeader = document.createElement('h2');
         postHeader.classList.add('post-header');
         postHeader.textContent = post.title.rendered;
 
-        // Legg til overskriften i overskriftscontaineren
+        // Add the header to the header container
         postHeaderContainer.appendChild(postHeader);
 
-        // Legg til overskriftscontaineren i post-containeren
+        // Add the header container to the post container
         postContainer.appendChild(postHeaderContainer);
 
-        // Opprett et nytt div-element for bildet
+        // Create a new div element for the image
         const postImageContainer = document.createElement('div');
         postImageContainer.classList.add('post-image-container');
 
-        // Opprett et nytt img-element for bildet
+        // Create a new img element for the image
         const postImage = document.createElement('img');
         postImage.classList.add('post__image');
-        postImage.src = post.jetpack_featured_media_url; // Endre til riktig bilde-URL
+        postImage.src = post.jetpack_featured_media_url; // Change to the correct image URL
         postImage.alt = post.title.rendered;
 
-        // Oppdater tittel til den spesifikke bloggposten
+       // Update title of the specific blog post
         document.title = post.title.rendered + ' | My Blog';
 
         // Legg til bildet i bildcontaineren
         postImageContainer.appendChild(postImage);
 
-        // Legg til bildcontaineren i post-containeren
+        // Add the image to the image container
         postContainer.appendChild(postImageContainer);
 
-        // Opprett et nytt seksjonselement for teksten
+        // Create a new section element for the text
         const postTextContainer = document.createElement('section');
         postTextContainer.classList.add('post-text-container');
 
@@ -99,23 +77,23 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         postContainer.appendChild(postTextContainer);
 
-        // Finn plasseringen der du vil sette inn postContainer i HTML-strukturen
+        // Find the location where you want to insert the postContainer in the HTML structure
         mainElement.insertBefore(postContainer, secondHrLineDiv);
 
-        // Fjern bildegalleri-innhold
+        // Remove image gallery content
         document.querySelectorAll('.post-container *').forEach(element => {
             if (isGalleryFigure(element)) {
                 element.remove();
             }
         });
 
-        // Legg til bildeklikk-hendelseslytteren i displayPost-funksjonen
+        // Add the image click event listener to the displayPost function
         postImage.addEventListener('click', function() {
             openModal(post.jetpack_featured_media_url);
         });
     }
 
-    // Funksjon for å åpne modalen og vise bildet
+    // Function to open the modal and display the image
     function openModal(imageUrl) {
         const modal = document.getElementById('modal');
         const modalImage = document.getElementById('modal-image');
@@ -123,13 +101,13 @@ document.addEventListener('DOMContentLoaded', async function () {
         modalImage.src = imageUrl;
     }
   
-    // Funksjon for å lukke modalen
+   // Function to close the modal
     function closeModal() {
         const modal = document.getElementById('modal');
         modal.style.display = 'none';
     }
   
-    // Legg til hendelseslytter for å lukke modalen når brukeren klikker utenfor bildet
+   // Add event listeners to close the modal when the user clicks outside the image
     window.addEventListener('click', function(event) {
         const modal = document.getElementById('modal');
         if (event.target === modal) {
@@ -137,14 +115,14 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     });
   
-    // Legg til hendelseslytter for å lukke modalen når brukeren klikker på lukkeknappen
+    // Add event listeners to close the modal when the user clicks the close button
     const closeButton = document.querySelector('.close');
     closeButton.addEventListener('click', closeModal);
 
     fetchPost();
 });
 
-// Funksjon for å filtrere ut bildegalleri-innhold
+// Function to filter out image gallery content
 function isGalleryFigure(element) {
     return element.tagName === 'FIGURE' && element.classList.contains('wp-block-gallery');
 }

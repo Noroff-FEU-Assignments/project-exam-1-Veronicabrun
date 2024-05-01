@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function isValidEmail(email) {
-        // En enkel validering av e-postadresse
+        // A simple email address validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
