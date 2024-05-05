@@ -254,7 +254,12 @@ h2 {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;      
 }
 
+.cta-blog-posts-two {
+    display:none    
+}
+
 .cta-blog-posts:hover,
+.cta-blog-posts-two:hover,
 .cta-bottom-home:hover,
 .cta-blog:hover,
 .cta-about:hover,
@@ -485,23 +490,6 @@ h2 {
 }
 
 /*post site*/
-.back-arrow {
-    display: inline-block;
-    margin-top: 20px; 
-}
-
-.arrow {
-    display: inline-block;
-    text-decoration: none;
-    padding: 5px;
-    margin-left: 10px;
-}
-
-.arrow::before {
-    content: "\f060"; /* Pilikon fra Font Awesome */
-    font-family: "Font Awesome 5 Free";
-}
-
 .post-container {
     display: flex;
     flex-direction: row;
@@ -936,6 +924,26 @@ input:focus, select:focus, textarea:focus {
 
    .cta-blog-posts {
         display:none;
+    }
+
+    .cta-blog-posts-two {
+        display:block;
+        position: absolute; 
+        bottom: 10; 
+        left: 0; 
+        margin-top: 15px;
+        text-align: center; 
+        line-height: 30px; 
+        width: 100px; 
+        height: 30px; 
+        padding: 10px 25px 10px 25px;
+        background-color: transparent; 
+        color: #F7F5F2; 
+        border: 1px solid #F7F5F2; 
+        border-radius: 0; 
+        font-size: 16px; 
+        cursor: pointer;    
+        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;       
     }
 
    .follow-me-header, 
