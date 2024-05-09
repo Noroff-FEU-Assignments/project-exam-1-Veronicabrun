@@ -77,6 +77,22 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         postContainer.appendChild(postTextContainer);
 
+// Create a new button element for the "Back to All Posts" button
+const backToAllPostsButton = document.createElement('button');
+backToAllPostsButton.classList.add('back-to-posts');
+backToAllPostsButton.textContent = 'ALL POSTS';
+
+// Add event listener to the "Back to All Posts" button
+backToAllPostsButton.addEventListener('click', function() {
+    // Handle the click event by navigating back to the page that displays all posts
+    window.location.href = 'blog.html'; // Erstatt 'URL to All Posts Page' med den faktiske URL-en
+});
+
+// Add the button after the text container
+postContainer.appendChild(backToAllPostsButton);
+
+        
+
         // Find the location where you want to insert the postContainer in the HTML structure
         mainElement.insertBefore(postContainer, secondHrLineDiv);
 
