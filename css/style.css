@@ -388,6 +388,7 @@ h2 {
     flex: 1;
     height: 570px;  
     object-fit: cover;
+    object-position: bottom;
 }
 
 /*Blog site*/
@@ -698,6 +699,7 @@ h2 {
     width: 370px;
     height: 370px;
     border-radius: 50%;
+    object-position: bottom;
 }
 
 .about-flexbox-bottom {

@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async function () {
        // Update title of the specific blog post
         document.title = post.title.rendered + ' | My Blog';
 
-        // Legg til bildet i bildcontaineren
+        // Add the image to the image container
         postImageContainer.appendChild(postImage);
 
         // Add the image to the image container
