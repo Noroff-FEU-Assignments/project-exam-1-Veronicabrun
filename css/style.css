@@ -1146,6 +1146,10 @@ input:focus, select:focus, textarea:focus {
         font-size: 26px;
     }
 
+    .modal-content {
+        margin: 58% auto;  
+    }
+
     .about-text>p {
         font-size: 17px; 
     }
