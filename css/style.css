@@ -18,6 +18,20 @@ body {
     background-color:#EFECE3;
 }
 
+.nav-menu ul li a {
+    position: relative;
+}
+
+.nav-menu ul li a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; 
+    width: 100%;
+    height: 2px; 
+    background-color: #2D2D2D;  
+}
+
 .logo {
    font-size: 1.7em;
    text-decoration: none;
@@ -56,7 +70,7 @@ a {
     background-color: #FFFF;
 }
 
-/*hamburgermenu*/
+/*Hamburgermenu*/
 #menu-toggle {
     display: none;
 }
@@ -144,6 +158,16 @@ a {
 }
 
 /* Carousel */
+.last-post-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 100;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
 .carousel-container {
     position: relative;
     display: flex;
@@ -219,8 +243,8 @@ a {
 .blog__header {
     margin-bottom: 10px; 
     color:#ffffff;
-    font-size: 32px;
-    font-weight:400;
+    font-size: 28px;
+    font-weight: 400;
 }
 
 .product__image {
@@ -239,8 +263,6 @@ h2 {
 
 .cta-blog-posts {
     position: absolute; 
-    bottom: 10; 
-    left: 0; 
     margin-top: 15px;
     text-align: center; 
     line-height: 30px; 
@@ -258,7 +280,7 @@ h2 {
 }
 
 .cta-blog-posts-two {
-    display:none    
+    display:none;    
 }
 
 .cta-blog-posts:hover,
@@ -269,10 +291,19 @@ h2 {
 .cta-about-bottom:hover,
 .cta_send:hover,
 .back-to-posts:hover,
-.li-footer a:hover,
-.nav-menu ul li:hover a {
+.li-footer a:hover {
     color: rgba(255, 255, 255, 0.5);
     border-color:rgba(255, 255, 255, 0.5);
+}
+
+/*Follow-me-container-home*/
+.follow-me-header,
+.read-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 100;
+    margin-bottom: 5px;
+    margin-left: 37px;
 }
 
 .small-header {
@@ -283,27 +314,7 @@ h2 {
     margin-left: 37px;
 }
 
-/*My-blog-post-container-home*/
-.follow-me-header,
-.read-header {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    font-weight: 100;
-    margin-bottom: 5px;
-    margin-left: 37px;
-}
-
-.last-post-header {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    font-weight: 100;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-}
-
-.my-blog-post-container {
+.follow-me-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -314,11 +325,11 @@ h2 {
     background-color: #C7BBA8;
 }
 
-.my-blog-post-card {
+.follow-me-card {
     margin: 0 auto; 
 }
 
-.my-blog-img {
+.follow-me-img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -326,7 +337,7 @@ h2 {
     object-fit: cover;
 }
 
-/*bottom-home-container*/
+/*Bottom-home-container*/
 .bottom-home-container {
     max-width: 100%;
     display: flex;
@@ -510,7 +521,7 @@ h2 {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-/*post site*/
+/*Post site*/
 .post-container {
     display: flex;
     flex-direction: row;
@@ -545,18 +556,18 @@ h2 {
 .post-header {
     text-align: center; 
     font-family: 'Playfair Display', serif;
-    font-size: 46px;
+    font-size: 42px;
     font-weight: 100;
     margin-top: 0px;
 }
 
 .post-text {
     color: #2D2D2D; 
-    font-size: 20px; 
+    font-size: 18px; 
     line-height: 1.6; 
 }
 
-/*modall*/
+/*Modall*/
 .modal {
     display: none; 
     position: fixed;
@@ -570,7 +581,7 @@ h2 {
 }
   
   
-  /* Bildet inni modalen */
+  /*Image inside the modal*/
 .modal-content {
     display: block;
     margin: auto; 
@@ -582,7 +593,7 @@ h2 {
     border: 1px solid #888;
 }
   
-  /* Lukkeknappen */
+  /*The close button*/
 .close {
     position: absolute;
     top: 15px;
@@ -620,7 +631,7 @@ h2 {
     margin-bottom: 10px;
 }
     
-/*about page*/
+/*About page*/
 .about-container {
     background-color: #5B574D;
     padding-top: 40px;
@@ -641,11 +652,13 @@ h2 {
     gap: 40px;
 }
 
-.about-flexbox * {
+.about-flexbox *,
+.about-flexbox-bottom * {
     flex: 1;  
 }
 
-.about-flexbox>div{
+.about-flexbox>div,
+.about-flexbox-bottom>div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -685,7 +698,7 @@ h2 {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-/*about page bottom*/
+/*About page bottom*/
 .about-container-bottom {
     max-width: 100%;
     display: flex;
@@ -697,8 +710,8 @@ h2 {
 
 .about-image-bottom {
     object-fit: cover;  
-    width: 370px;
-    height: 370px;
+    width: 360px;
+    height: 360px;
     border-radius: 50%;
     object-position: bottom;
 }
@@ -709,17 +722,6 @@ h2 {
     display: flex; 
     gap: 40px;   
     align-items: center; 
-}
-
-.about-flexbox-bottom * {
-    flex: 1;  
-}
-
-.about-flexbox-bottom>div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .about-large-text {
@@ -747,8 +749,10 @@ h2 {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;   
 }
 
-/*contact me*/
-input, select, textarea {
+/*Contact me*/
+input, 
+select, 
+textarea {
     border: none;
     border-bottom: 1px solid #2D2D2D;
     padding: 10px;
@@ -757,10 +761,13 @@ input, select, textarea {
     background-color: transparent; 
     outline: none; 
     padding-top: 60px;
+    font-size: 16px;
 } 
 
-/* Style for fokuslinjen på inputfeltene */
-input:focus, select:focus, textarea:focus {
+
+input:focus, 
+select:focus, 
+textarea:focus {
     border-bottom: 2px solid #615C52; 
 }
 
@@ -779,7 +786,6 @@ input:focus, select:focus, textarea:focus {
 .contact-us-container {
     display: flex;
     flex-direction: column;
-  
     padding: 10px;
     line-height: 1.8; 
     flex: 1 1 45%; 
@@ -820,7 +826,6 @@ input:focus, select:focus, textarea:focus {
     border-radius: 30px;
     padding: 30px; 
     margin-top: 40px;
-
 }
 
 .contact-us-container-one {
@@ -904,11 +909,6 @@ input:focus, select:focus, textarea:focus {
 }
 
 /*@media*/
-@media(max-width:1474px) {
-    .my-blog-post-container {
-    }
-}
-
 @media(max-width: 1199px) {
     .post-container {
         padding: 15px;
@@ -1082,7 +1082,7 @@ input:focus, select:focus, textarea:focus {
 }
     
 @media(max-width:732px) {
-    .my-blog-post-container {
+    .follow-me-container {
         flex-direction: column;  
     } 
 }
@@ -1092,7 +1092,6 @@ input:focus, select:focus, textarea:focus {
     position: sticky;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 1000;
 }
     .nav-menu ul {
@@ -1165,9 +1164,10 @@ input:focus, select:focus, textarea:focus {
     .banner-container {
         top: 45px;
     }
-
-    .carousel__image  {
-      
-    }
 }
 
+@media(max-width:387px) {
+    .footer-container {
+        flex-direction: column;
+    }
+}

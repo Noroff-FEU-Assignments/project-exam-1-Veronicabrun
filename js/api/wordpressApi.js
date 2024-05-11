@@ -31,7 +31,7 @@ async function fetchPosts() {
         return posts;
     } catch (error) {
         console.error('Error fetching posts:', error);
-        throw error; // Kast feilen videre for å fange den i displayPosts
+        throw error; // Pass the error to catch it in displayPosts
     }
 }
 
@@ -81,13 +81,12 @@ async function displayPosts() {
 }
 catch (error) {
     console.error('Error displaying posts:', error);
-    // Her kan du vurdere å vise en feilmelding til brukeren eller håndtere feilen på en annen måte
-    // Viser feilmelding til brukeren
+    // Displays an error message to the user
     displayErrorMessage('Something went wrong while retrieving posts. Please try again later.');
     
     
 } finally {
-    hideLoadingIndicator(); // Skjuler ladeindikatoren uavhengig av om det oppstod en feil eller ikke
+    hideLoadingIndicator(); // Hides the charging indicator regardless of whether an error occurred or not
 }
 }
 

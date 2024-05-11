@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         // Create a new img element for the image
         const postImage = document.createElement('img');
         postImage.classList.add('post__image');
-        postImage.src = post.jetpack_featured_media_url; // Change to the correct image URL
+        postImage.src = post.jetpack_featured_media_url; 
         postImage.alt = post.title.rendered;
 
        // Update title of the specific blog post
@@ -90,8 +90,6 @@ backToAllPostsButton.addEventListener('click', function() {
 
 // Add the button after the text container
 postContainer.appendChild(backToAllPostsButton);
-
-        
 
         // Find the location where you want to insert the postContainer in the HTML structure
         mainElement.insertBefore(postContainer, secondHrLineDiv);
