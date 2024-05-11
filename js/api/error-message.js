@@ -1,5 +1,4 @@
 // error-message.js
-
 export function displayErrorMessage(message) {
     postContainer.classList.add('post-container');
     const errorMessageElement = document.createElement('div');

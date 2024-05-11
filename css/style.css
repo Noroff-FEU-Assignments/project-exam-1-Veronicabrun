@@ -269,7 +269,8 @@ h2 {
 .cta-about-bottom:hover,
 .cta_send:hover,
 .back-to-posts:hover,
-.li-footer a:hover  {
+.li-footer a:hover,
+.nav-menu ul li:hover a {
     color: rgba(255, 255, 255, 0.5);
     border-color:rgba(255, 255, 255, 0.5);
 }
@@ -721,7 +722,7 @@ h2 {
     justify-content: space-between;
 }
 
-.about-text-bottom>p {
+.about-large-text {
     color: #2d2d2d;
     font-family: 'Playfair Display', serif;
     font-style: italic;
@@ -751,6 +752,7 @@ input, select, textarea {
     border: none;
     border-bottom: 1px solid #2D2D2D;
     padding: 10px;
+    padding-left: 0;
     border-radius: 0;
     background-color: transparent; 
     outline: none; 
@@ -1086,6 +1088,13 @@ input:focus, select:focus, textarea:focus {
 }
 
 @media(max-width: 500px) {
+.nav-menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
     .nav-menu ul {
         display: none;
     }
@@ -1117,7 +1126,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 @media(max-width:431px) {
-    .about-text-bottom>p{
+    .about-large-text {
         font-size: 40px;
     }
 
