@@ -1,19 +1,19 @@
-const apiUrl = 'https://veronicabp.com/ecommerce/wp-json/wp/v2/posts';
+const apiUrl = "https://veronicabp.com/ecommerce/wp-json/wp/v2/posts";
 let offset = 0;
 
-import { displayErrorMessage, removeErrorMessage } from './error-message.js';
+import { displayErrorMessage, removeErrorMessage } from "./error-message.js";
 
 
 // Function to display the charging indicator
 function showLoadingIndicator(container) {
-    const loadingIndicator = document.createElement('div');
-    loadingIndicator.classList.add('loading-indicator');
+    const loadingIndicator = document.createElement("div");
+    loadingIndicator.classList.add("loading-indicator");
     container.appendChild(loadingIndicator);
 }
 
 // Function to hide the charging indicator
 function hideLoadingIndicator() {
-    const loadingIndicator = document.querySelector('.loading-indicator');
+    const loadingIndicator = document.querySelector(".loading-indicator");
     if (loadingIndicator) {
         loadingIndicator.remove();
     }
@@ -24,19 +24,19 @@ async function fetchPosts() {
         const response = await fetch(`${apiUrl}?per_page=10&offset=${offset}`);
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error("Network response was not ok");
         }
 
         const posts = await response.json();
         return posts;
     } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error("Error fetching posts:", error);
         throw error; // Pass the error to catch it in displayPosts
     }
 }
 
 async function displayPosts() {
-    const blogContainer = document.querySelector('.blog-container');
+    const blogContainer = document.querySelector(".blog-container");
    
     showLoadingIndicator(blogContainer); // Show the loading indicator near the blog posts
 
@@ -47,16 +47,16 @@ async function displayPosts() {
     hideLoadingIndicator(); // Hide the loading indicator when the records are loaded
 
     if (!posts || posts.length === 0) {
-        console.log('No more posts to load.');
+        console.log("No more posts to load.");
         return;
     }
 
     posts.forEach(post => {
-        const blogSection = document.createElement('section');
-        blogSection.classList.add('blog-section');
+        const blogSection = document.createElement("section");
+        blogSection.classList.add("blog-section");
 
-        const leftContainer = document.createElement('div');
-        leftContainer.classList.add('left-blog-container');
+        const leftContainer = document.createElement("div");
+        leftContainer.classList.add("left-blog-container");
         leftContainer.innerHTML = `
             <div class="container-text">
                 <h2 class="text-blog-container">${post.title.rendered}</h2>
@@ -64,8 +64,8 @@ async function displayPosts() {
             </div>
         `;
 
-        const rightContainer = document.createElement('div');
-        rightContainer.classList.add('right-blog-container');
+        const rightContainer = document.createElement("div");
+        rightContainer.classList.add("right-blog-container");
         rightContainer.innerHTML = `
             <img class="blog-img" src="${post.jetpack_featured_media_url}" alt="${post.title.rendered}">
         `;
@@ -80,9 +80,9 @@ async function displayPosts() {
     offset += 10;
 }
 catch (error) {
-    console.error('Error displaying posts:', error);
+    console.error("Error displaying posts:", error);
     // Displays an error message to the user
-    displayErrorMessage('Something went wrong while retrieving posts. Please try again later.');
+    displayErrorMessage("Something went wrong while retrieving posts. Please try again later.");
     
     
 } finally {
@@ -91,19 +91,19 @@ catch (error) {
 }
 
 // Listen function for click on "READ MORE" button
-document.querySelector('.cta-blog-bottom').addEventListener('click', displayPosts);
+document.querySelector(".cta-blog-bottom").addEventListener("click", displayPosts);
 
 // Load the first 10 blog posts when the page loads
-window.addEventListener('load', displayPosts);
+window.addEventListener("load", displayPosts);
 
 // Listen function for click on "READ MORE" button
-document.querySelector('.cta-blog-bottom').addEventListener('click', async function(event) {
+document.querySelector(".cta-blog-bottom").addEventListener("click", async function(event) {
   event.preventDefault(); // Prevents default behavior (jumping to the top of the page)
 
 // Check if enough records have already been loaded
-  const numberOfPosts = document.querySelectorAll('.blog-section').length;
+  const numberOfPosts = document.querySelectorAll(".blog-section").length;
   if (numberOfPosts >= 10) {
-    console.log('All posts already loaded.');
+    console.log("All posts already loaded.");
     return;
   }
 // Load more records

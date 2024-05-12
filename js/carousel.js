@@ -1,25 +1,25 @@
-const apiUrl = 'https://veronicabp.com/ecommerce/wp-json/wp/v2/posts';
-const carouselContainer = document.querySelector('.carousel-container');
-const carouselInner = carouselContainer.querySelector('.carousel-inner');
-const carouselPrevButton = carouselContainer.querySelector('.carousel-prev');
-const carouselNextButton = carouselContainer.querySelector('.carousel-next');
+const apiUrl = "https://veronicabp.com/ecommerce/wp-json/wp/v2/posts";
+const carouselContainer = document.querySelector(".carousel-container");
+const carouselInner = carouselContainer.querySelector(".carousel-inner");
+const carouselPrevButton = carouselContainer.querySelector(".carousel-prev");
+const carouselNextButton = carouselContainer.querySelector(".carousel-next");
 
 let currentIndex = 0; // Index of current image displayed
 let images = []; // Global scope for image data
 
 // Create the charging indicator
-const loadingIndicator = document.createElement('div');
-loadingIndicator.classList.add('loading-indicator');
+const loadingIndicator = document.createElement("div");
+loadingIndicator.classList.add("loading-indicator");
 carouselContainer.appendChild(loadingIndicator);
 
 // Function to display the charging indicator
 function showLoadingIndicator() {
-    loadingIndicator.style.display = 'block';
+    loadingIndicator.style.display = "block";
 }
 
 // Function to hide the charging indicator
 function hideLoadingIndicator() {
-    loadingIndicator.style.display = 'none';
+    loadingIndicator.style.display = "none";
 }
 
 // Function to retrieve image data from the API
@@ -37,7 +37,7 @@ async function fetchImages() {
 
         return images;
     } catch (error) {
-        console.error('Error fetching images:', error);
+        console.error("Error fetching images:", error);
     } finally {
         hideLoadingIndicator(); // Hide the loading indicator after image data is fetched
     }
@@ -46,12 +46,12 @@ async function fetchImages() {
 // Function to update the carousel with images
 async function updateCarousel() {
     if (!images || images.length === 0) {
-        console.log('No images found.');
+        console.log("No images found.");
         return;
     }
 
     // Remove previous image elements
-    carouselInner.innerHTML = '';
+    carouselInner.innerHTML = " ";
 
     // Limit the view to only three images
     const startIndex = currentIndex;
@@ -61,11 +61,11 @@ async function updateCarousel() {
         const image = images[i];
 
         // Create carousel elements
-        const carouselCard = document.createElement('div');
-        carouselCard.classList.add('carousel-card', 'carousel-featured');
+        const carouselCard = document.createElement("div");
+        carouselCard.classList.add("carousel-card", "carousel-featured");
 
-        const img = document.createElement('img');
-        img.classList.add('carousel__image');
+        const img = document.createElement("img");
+        img.classList.add("carousel__image");
         img.src = image.src;
         img.alt = image.alt;
 
@@ -76,8 +76,8 @@ async function updateCarousel() {
             img.style.opacity = 0.5; // Other images
         }
 
-        const link = document.createElement('a');
-        link.href = 'blog.html';
+        const link = document.createElement("a");
+        link.href = "blog.html";
         link.appendChild(img);
 
        // Add carousel elements to the carousel container
@@ -87,13 +87,13 @@ async function updateCarousel() {
 }
 
 // Click function to go to previous image
-carouselPrevButton.addEventListener('click', () => {
+carouselPrevButton.addEventListener("click", () => {
     currentIndex = Math.max(0, currentIndex - 1);
     updateCarousel();
 });
 
 // Click function to go to the next image
-carouselNextButton.addEventListener('click', () => {
+carouselNextButton.addEventListener("click", () => {
     currentIndex = Math.min(currentIndex + 1, images.length - 1);
     updateCarousel();
 });
