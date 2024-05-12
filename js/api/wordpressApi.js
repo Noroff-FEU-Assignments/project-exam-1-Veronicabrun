@@ -1,4 +1,4 @@
-const apiUrl = "https://veronicabp.com/ecommerce/wp-json/wp/v2/posts";
+const apiUrl = "https://veronicabp.com/ecommerce/wp-json/wp/v2/posts;
 let offset = 0;
 
 import { displayErrorMessage, removeErrorMessage } from "./error-message.js";
