@@ -18,11 +18,13 @@ body {
     background-color:#EFECE3;
 }
 
-.nav-menu ul li a {
+.nav-menu ul li a,
+.li-footer a {
     position: relative;
 }
 
-.nav-menu ul li a:hover::after {
+.nav-menu ul li a:hover::after ,
+.li-footer a:hover:after {
     content: "";
     position: absolute;
     left: 0;
@@ -290,8 +292,7 @@ h2 {
 .cta-about:hover,
 .cta-about-bottom:hover,
 .cta_send:hover,
-.back-to-posts:hover,
-.li-footer a:hover {
+.back-to-posts:hover {
     color: rgba(255, 255, 255, 0.5);
     border-color:rgba(255, 255, 255, 0.5);
 }
@@ -949,7 +950,7 @@ textarea:focus {
 
 }
 
-@media(max-width:1100px){
+@media(max-width:1100px) {
     .contact-info-container {
         flex-direction: column;
     }
@@ -1058,7 +1059,7 @@ textarea:focus {
     }
 }
 
-@media(max-width: 831px) {
+@media(max-width:831px) {
     .nav-menu {
         flex-direction: column; 
         display: block;
@@ -1087,7 +1088,7 @@ textarea:focus {
     } 
 }
 
-@media(max-width: 500px) {
+@media(max-width:500px) {
 .nav-menu {
     position: sticky;
     top: 0;

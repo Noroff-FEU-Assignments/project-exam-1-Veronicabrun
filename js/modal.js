@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     const urlParams = new URLSearchParams(queryString);
     const postId = urlParams.get("id");
 
-    // Get the specific blog post based on postId
     async function fetchPost() {
         try {
             const response = await fetch(`https://veronicabp.com/ecommerce/wp-json/wp/v2/posts/${postId}`);
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-    // Show the loading indicator while the blog post is loading
     const loadingIndicator = document.createElement("div");
     loadingIndicator.classList.add("loading-indicator");
     const mainElement = document.querySelector("main");
@@ -24,18 +22,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 
    // Display the specific blog post
     function displayPost(post) {
-      // Remove the charging indicator
+      
         loadingIndicator.remove();
 
-      // Create a new section element for the blog post
         const postContainer = document.createElement("section");
         postContainer.classList.add("post-container");
 
-       // Create a new div element for the header
         const postHeaderContainer = document.createElement("div");
         postHeaderContainer.classList.add("post-header-container");
 
-       // Create a new h2 element for the header
         const postHeader = document.createElement("h2");
         postHeader.classList.add("post-header");
         postHeader.textContent = post.title.rendered;
@@ -56,13 +51,11 @@ document.addEventListener("DOMContentLoaded", async function () {
         postImage.src = post.jetpack_featured_media_url; 
         postImage.alt = post.title.rendered;
 
-       // Update title of the specific blog post
         document.title = post.title.rendered + " | My Blog";
 
         // Add the image to the image container
         postImageContainer.appendChild(postImage);
 
-        // Add the image to the image container
         postContainer.appendChild(postImageContainer);
 
         // Create a new section element for the text
@@ -84,8 +77,7 @@ backToAllPostsButton.textContent = "ALL POSTS";
 
 // Add event listener to the "Back to All Posts" button
 backToAllPostsButton.addEventListener("click", function() {
-    // Handle the click event by navigating back to the page that displays all posts
-    window.location.href = "blog.html"; // Erstatt 'URL to All Posts Page' med den faktiske URL-en
+    window.location.href = "blog.html"; 
 });
 
 // Add the button after the text container
@@ -107,7 +99,6 @@ postContainer.appendChild(backToAllPostsButton);
         });
     }
 
-    // Function to open the modal and display the image
     function openModal(imageUrl) {
         const modal = document.getElementById("modal");
         const modalImage = document.getElementById("modal-image");
@@ -115,7 +106,6 @@ postContainer.appendChild(backToAllPostsButton);
         modalImage.src = imageUrl;
     }
   
-   // Function to close the modal
     function closeModal() {
         const modal = document.getElementById("modal");
         modal.style.display = "none";

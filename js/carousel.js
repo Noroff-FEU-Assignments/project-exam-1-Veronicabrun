@@ -7,17 +7,14 @@ const carouselNextButton = carouselContainer.querySelector(".carousel-next");
 let currentIndex = 0; // Index of current image displayed
 let images = []; // Global scope for image data
 
-// Create the charging indicator
 const loadingIndicator = document.createElement("div");
 loadingIndicator.classList.add("loading-indicator");
 carouselContainer.appendChild(loadingIndicator);
 
-// Function to display the charging indicator
 function showLoadingIndicator() {
     loadingIndicator.style.display = "block";
 }
 
-// Function to hide the charging indicator
 function hideLoadingIndicator() {
     loadingIndicator.style.display = "none";
 }
@@ -25,7 +22,7 @@ function hideLoadingIndicator() {
 // Function to retrieve image data from the API
 async function fetchImages() {
     try {
-        showLoadingIndicator(); // Show the loading indicator before retrieving images
+        showLoadingIndicator(); 
         const response = await fetch(apiUrl);
         const posts = await response.json();
 
@@ -39,7 +36,7 @@ async function fetchImages() {
     } catch (error) {
         console.error("Error fetching images:", error);
     } finally {
-        hideLoadingIndicator(); // Hide the loading indicator after image data is fetched
+        hideLoadingIndicator(); 
     }
 }
 
