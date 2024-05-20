@@ -1,5 +1,7 @@
 ## Project Exam 1
 
+![ Homepage with navigation menu at the top, followed by an image of a beige sofa](https://github.com/Noroff-FEU-Assignments/project-exam-1-Veronicabrun/blob/main/2024-05-19_22h31_13.png?raw=true)
+
 ## Goal
 
 To put into practice the skills learned over your first year of studies.
