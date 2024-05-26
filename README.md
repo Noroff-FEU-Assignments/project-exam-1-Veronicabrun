@@ -68,3 +68,13 @@ Note that this is an exam, and therefore tutor support will be limited as per th
 2.	Post the data from the contact form to WordPress so you have the details saved.
 3.	Allow users to submit comments on a blog post, and post this data to WordPress
 
+## Link
+
+Netlify: https://sweet-speculoos-2088a4.netlify.app/
+
+## Contact
+Email: vbpedersen@outlook.com
+
+LinkedIn: [LinkedIn](https://linkedin.com/in/veronica-brun-pedersen-2860bb249)
+
+
