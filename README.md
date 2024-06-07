@@ -73,8 +73,9 @@ Note that this is an exam, and therefore tutor support will be limited as per th
 Netlify: https://sweet-speculoos-2088a4.netlify.app/
 
 ## Contact
-Email: vbpedersen@outlook.com
 
-LinkedIn: [LinkedIn](https://linkedin.com/in/veronica-brun-pedersen-2860bb249)
+Feel free to reach out to me for any inquiries or collaboration opportunities:
+- **Email:** [vbpedersen@outlook.com](mailto:your-email@example.com)
+- **LinkedIn:** [LinkedIn](https://linkedin.com/in/veronica-brun-pedersen-2860bb249)
 
 
