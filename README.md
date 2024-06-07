@@ -70,7 +70,7 @@ Note that this is an exam, and therefore tutor support will be limited as per th
 
 ## Link
 
-Netlify: https://sweet-speculoos-2088a4.netlify.app/
+- **Netlify:** https://sweet-speculoos-2088a4.netlify.app/
 
 ## Contact
 
